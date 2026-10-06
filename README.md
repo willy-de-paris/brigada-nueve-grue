@@ -2,7 +2,7 @@
 
 Site de présentation de notre projet de la **semaine d'intégration** : concevoir une grue capable de lever **300 kg** sur **4 m** et de les déplacer sur **3 m**, uniquement à la force humaine, validée par une maquette à l'échelle **1:10** (40 cm de levage, 30 cm de translation).
 
-**Site en ligne :** https://TON-PSEUDO.github.io/NOM-DU-DEPOT/
+**Site en ligne :** https://willy-de-paris.github.io/brigada-nueve-grue/
 
 ## Contenu du site
 
