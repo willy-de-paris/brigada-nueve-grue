@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Brigada Nueve – Grue manuelle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a href="#accueil" class="logo">La Brigada Nueve</a>
+  <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  <nav id="menu">
+    <a href="#projet">Projet</a>
+    <a href="#materiel">Matériel</a>
+    <a href="#conceptions">Conceptions</a>
+    <a href="#comparatif">Comparatif</a>
+    <a href="#choix">Choix</a>
+    <a href="#maquette3d">3D</a>
+    <a href="#calcul">Calcul</a>
+    <a href="#suite">Suite</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="accueil">
+  <div class="hero-text">
+    <p class="kicker">La Brigada Nueve · Semaine d'intégration · Boucle 1 : Conception</p>
+    <h1>Lever 300&nbsp;kg à la force humaine</h1>
+    <p>Conception d'une grue manuelle, démontable et frugale, validée par une maquette à l'échelle 1:10.</p>
+    <div class="stats">
+      <div><b>300 kg</b><span>charge</span></div>
+      <div><b>4 m → 40 cm</b><span>levage</span></div>
+      <div><b>3 m → 30 cm</b><span>translation</span></div>
+    </div>
+  </div>
+  <img src="images/schema.png" alt="Schéma cinématique du portique à chariot avec palan à chaîne">
+</section>
+
+<section id="projet">
+  <h2>Le projet</h2>
+  <div class="grid two">
+    <div>
+      <h3>Contexte</h3>
+      <p>Concevoir une grue capable de soulever <strong>300 kg</strong> sur <strong>4 m</strong> de haut avec une portée de <strong>3 m</strong>, simulée par une maquette à l'échelle 1:10. Le cadre est le changement climatique : réduire nos émissions.</p>
+      <h3>Problématique</h3>
+      <ol>
+        <li>Comment utiliser l'énergie humaine pour manier de lourdes charges ?</li>
+        <li>Comment assurer la stabilité d'une grue en utilisant l'énergie humaine ?</li>
+        <li>Quel mécanisme utiliser pour soulever la charge ?</li>
+      </ol>
+      <h3>Mots-clés</h3>
+      <p class="tags"><span>Rapport de réduction</span><span>Grue</span><span>Énergie humaine</span><span>Frugalité</span><span>Maquette</span></p>
+    </div>
+    <div>
+      <h3>Contraintes</h3>
+      <ul>
+        <li>Montable / démontable et transportable</li>
+        <li>Matériel fourni</li>
+        <li>Capacité de l'engin</li>
+        <li>Pas d'énergie fossile : force humaine uniquement</li>
+        <li>Utilisable par une seule personne</li>
+        <li>Respecter l'échelle (principe et rapport de réduction avant tout)</li>
+      </ul>
+      <h3>Objectifs</h3>
+      <ul>
+        <li>Apprentissage</li>
+        <li>Projet</li>
+        <li>Respecter un cahier des charges</li>
+        <li>Mécanique (PFS / PFD)</li>
+      </ul>
+      <h3>Hypothèses</h3>
+      <ul>
+        <li>Note de calcul : répartition des charges</li>
+        <li>Système de levier / poulie</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid two">
+    <div>
+      <h3>Délai</h3>
+      <p>2,5 jours, soit 4 demi-journées, avec un concours à la fin.</p>
+      <h3>Ressources</h3>
+      <p>Maths, algèbre, géométrie, trigonométrie, physique, bases de la mécanique, PFS, PFD.</p>
+    </div>
+    <div>
+      <h3>Livrables</h3>
+      <ul>
+        <li>Diagramme cinématique validant les objectifs</li>
+        <li>Maquette fonctionnelle</li>
+        <li>Plan de montage avec nomenclature</li>
+        <li>Conception, choix de l'engin, schéma cinématique, note de calcul (à rendre mercredi)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Plan d'action</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Étape</th><th>Durée</th><th>Qui</th></tr></thead>
+      <tbody>
+        <tr><td>Intervention de l'expert en mécanique (prise de notes)</td><td>2 h</td><td>Groupe</td></tr>
+        <tr><td>Mise en commun des notes, lien avec le projet</td><td>15 min</td><td>Groupe</td></tr>
+        <tr><td>Analyse de la fiche IA</td><td>15 min</td><td>Autonomie</td></tr>
+        <tr><td>Étude des ressources, puis choix du système</td><td>1 h</td><td>Groupe</td></tr>
+        <tr><td>Discussion sur la conception la plus adaptée</td><td>30 min</td><td>Groupe</td></tr>
+        <tr><td>Schéma cinématique</td><td>1 h</td><td>Groupe</td></tr>
+        <tr><td>Note de calcul des charges (répartition)</td><td>½ journée</td><td>Rezan, Amed, Victoria</td></tr>
+        <tr><td>Dimensionner la maquette et commencer le montage</td><td>½ journée</td><td>Groupe</td></tr>
+        <tr><td>Vérifications et derniers détails</td><td>½ journée</td><td>Groupe</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Le plan d'action a été fait sur 3 jours, alors qu'il fallait le faire sur une journée par boucle.</p>
+</section>
+
+<section id="materiel" class="alt">
+  <h2>Matériel disponible</h2>
+  <div class="grid cards">
+    <article><h3>Ficelles</h3><p>Coton Ø 1,5 mm (résiste à 1 kg) et jute Ø 2,5 mm (résiste à 2 kg).</p></article>
+    <article><h3>Structure</h3><p>Carton, fil de fer, deux plaques d'environ 9 × 12 cm pour rigidifier et supporter les axes.</p></article>
+    <article><h3>Mécanisme</h3><p>Poulies de deux diamètres, engrenages de trois tailles, pics à brochette pour les axes.</p></article>
+    <article><h3>Assemblage</h3><p>Quelques boulons avec écrous, colle chaude.</p></article>
+    <article><h3>Essais</h3><p>Balance suspendue et poids de référence.</p></article>
+  </div>
+</section>
+
+<section id="conceptions">
+  <h2>Les trois conceptions</h2>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="c1">1. Portique à chariot</button>
+    <button role="tab" aria-selected="false" data-tab="c2">2. Grue pivotante</button>
+    <button role="tab" aria-selected="false" data-tab="c3">3. Chèvre à parallélogramme</button>
+  </div>
+  <div class="panel" id="c1">
+    <p><strong>Principe :</strong> structure en portique (type A ou H) avec une poutre horizontale sur laquelle circule un chariot porte-palan. Les deux mouvements, vertical et horizontal, sont clairement séparés.</p>
+    <p><strong>Avec notre matériel :</strong> le carton fait les montants et la poutre, les plaques renforcent les zones sous charge, les pics et le fil de fer servent d'axes. Sans palan à chaîne, on réalise un treuil manuel démultiplié : manivelle, engrenages, tambour, ficelle, poulies.</p>
+  </div>
+  <div class="panel" id="c2" hidden>
+    <p><strong>Principe :</strong> un mât vertical pivotant porte une flèche relevable. Le levage se fait au treuil, la translation par rotation du mât.</p>
+    <p><strong>Limite :</strong> une charge éloignée du mât crée un fort moment de renversement. Il faut un lestage ou un ancrage, ce qui nuit à la démontabilité. Le pivot rigide et la base stable en carton sont aussi plus délicats.</p>
+  </div>
+  <div class="panel" id="c3" hidden>
+    <p><strong>Principe :</strong> un trépied, un bras déformable en parallélogramme et un système de mouflage. La solution est compacte, légère et stable.</p>
+    <p><strong>Limite :</strong> il faut plusieurs liaisons pivot bien alignées. En carton, avec des axes en pics ou en fil de fer, les jeux, frottements et déformations gênent le fonctionnement, et le déplacement horizontal précis est difficile à régler.</p>
+  </div>
+</section>
+
+<section id="comparatif" class="alt">
+  <h2>Comparatif</h2>
+  <div class="table-wrap">
+    <table class="cmp">
+      <thead><tr><th>Critère</th><th class="win">Portique + chariot</th><th>Grue pivotante</th><th>Trépied / parallélogramme</th></tr></thead>
+      <tbody>
+        <tr><td>Compatibilité avec le carton</td><td>Très bonne</td><td>Moyenne</td><td>Moyenne</td></tr>
+        <tr><td>Utilisation des poulies</td><td>Très bonne</td><td>Très bonne</td><td>Très bonne</td></tr>
+        <tr><td>Utilisation des engrenages</td><td>Très bonne</td><td>Très bonne</td><td>Moyenne</td></tr>
+        <tr><td>Facilité de fabrication</td><td>Très bonne</td><td>Moyenne</td><td>Faible</td></tr>
+        <tr><td>Stabilité de la maquette</td><td>Bonne</td><td>Plus délicate</td><td>Bonne mais complexe</td></tr>
+        <tr><td>Translation horizontale de 30 cm</td><td>Simple</td><td>Par rotation</td><td>Complexe</td></tr>
+        <tr><td>Levage vertical de 40 cm</td><td>Simple</td><td>Simple</td><td>Simple</td></tr>
+        <tr><td>Réglage / mise au point</td><td>Simple</td><td>Moyen</td><td>Complexe</td></tr>
+        <tr><td>Risque de blocage ou de jeu</td><td>Faible</td><td>Moyen</td><td>Élevé</td></tr>
+        <tr><td>Adéquation globale au matériel</td><td>Excellente</td><td>Correcte</td><td>Moyenne</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="choix">
+  <h2>Solution retenue : le portique à chariot</h2>
+  <div class="grid two">
+    <div>
+      <p>Nous avons comparé les trois solutions selon les contraintes du cahier des charges : lever 300 kg jusqu'à 4 m, les déplacer sur 3 m, utiliser uniquement l'énergie humaine, permettre l'usage par une seule personne, et obtenir un système simple, stable, démontable et transportable.</p>
+      <p>Nous avons retenu le <strong>portique à chariot mobile avec treuil manuel et système de poulies</strong>, simple à fabriquer avec le carton, les poulies, les engrenages, la ficelle et les pics à brochette.</p>
+      <ul>
+        <li>Le <strong>chariot</strong> assure la translation de 3 m, soit 30 cm sur la maquette.</li>
+        <li>Le <strong>treuil démultiplié</strong> avec le palan assure le levage de 4 m, soit 40 cm sur la maquette.</li>
+        <li>Stable sans contrepoids important.</li>
+        <li>Engrenages et poulies réduisent l'effort de l'opérateur.</li>
+      </ul>
+      <p>C'est le meilleur compromis entre simplicité, stabilité, efficacité, ergonomie et facilité de réalisation.</p>
+    </div>
+    <figure>
+      <img src="images/dimensionnement.png" alt="Dimensionnement clé : palan, chariot et structure">
+      <figcaption>Dimensionnement de la conception initiale (palan à chaîne manuel).</figcaption>
+    </figure>
+  </div>
+  <h3>Chaîne cinématique de la maquette</h3>
+  <ol class="chain">
+    <li>Manivelle</li><li>Train d'engrenages</li><li>Tambour</li><li>Ficelle</li><li>Poulie(s)</li><li>Charge</li>
+  </ol>
+</section>
+
+<section id="maquette3d">
+  <h2>Maquette 3D interactive</h2>
+  <p>Fais glisser pour tourner autour du portique. Les curseurs commandent le chariot (3 m, soit 30 cm sur la maquette) et le levage (4 m, soit 40 cm).</p>
+  <div id="crane3d" aria-label="Portique 3D interactif"></div>
+  <div class="ctrl">
+    <label>Chariot : <output id="oT">0 cm</output><input id="sT" type="range" min="0" max="1" step="0.001" value="0"></label>
+    <label>Levage : <output id="oL">0 cm</output><input id="sL" type="range" min="0" max="1" step="0.001" value="0"></label>
+    <button id="demo" type="button">Lancer la démo</button>
+  </div>
+</section>
+
+<section id="calcul" class="alt">
+  <h2>Calcul d'effort</h2>
+  <p>Effort = masse × 9,81 ÷ rapport de réduction. Avec un palan 1/60 et 300 kg, on obtient environ 49 N (5 kg). Modifie les valeurs pour tester.</p>
+  <form class="calc" onsubmit="return false">
+    <label>Masse (kg)<input id="mass" type="number" value="300" min="0" step="any"></label>
+    <label>Rapport de réduction (1/N)<input id="ratio" type="number" value="60" min="1" step="any"></label>
+    <output id="result" aria-live="polite"></output>
+  </form>
+  <p class="note">Pour la maquette, le rapport réel reste à calculer : il faut relever les dents des engrenages et le diamètre du tambour. Le coton résiste à 1 kg et le jute à 2 kg, ce qui limite la charge d'essai.</p>
+</section>
+
+<section id="suite">
+  <h2>Suite du projet</h2>
+  <ol class="steps">
+    <li>Dimensionner le portique</li>
+    <li>Définir précisément le chariot</li>
+    <li>Déterminer le rapport de réduction réalisable avec les engrenages fournis</li>
+    <li>Concevoir le treuil et les poulies</li>
+    <li>Réaliser le schéma cinématique et les plans de la maquette à l'échelle 1:10</li>
+  </ol>
+</section>
+</main>
+
+<footer>La Brigada Nueve · Semaine d'intégration · Conception d'une grue manuelle · Maquette 1:10</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+<script src="crane3d.js"></script>
+</body>
+</html>
