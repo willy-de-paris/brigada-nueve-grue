@@ -10,8 +10,13 @@
  */
 
 (function () {
+  let initialized = false; // Indicateur pour éviter la double initialisation
+
   // Fonction principale d'initialisation de la scène 3D
   function init() {
+    // Éviter l'initialisation multiple
+    if (initialized) return;
+    initialized = true;
     // Récupération du conteneur HTML pour la scène 3D
     const box = document.getElementById('crane3d');
     if (!box) {
