@@ -1,8 +1,12 @@
 (function () {
   function init() {
     const box = document.getElementById('crane3d');
-    if (!box || typeof THREE === 'undefined') {
-      if (box) box.innerHTML = '<p style="padding:1rem">La 3D nécessite une connexion internet (Three.js).</p>';
+    if (!box) {
+      console.error('Conteneur #crane3d non trouvé');
+      return;
+    }
+    if (typeof THREE === 'undefined') {
+      box.innerHTML = '<p style="padding:1rem">La 3D nécessite une connexion internet (Three.js).</p>';
       return;
     }
 
@@ -170,9 +174,12 @@
     requestAnimationFrame(loop);
   }
 
-  if (typeof THREE !== 'undefined') {
-    init();
-  } else {
-    window.addEventListener('load', init);
+  function checkAndInit() {
+    if (document.readyState !== 'loading' && typeof THREE !== 'undefined') {
+      init();
+    }
   }
+
+  document.addEventListener('DOMContentLoaded', checkAndInit);
+  window.addEventListener('load', checkAndInit);
 })();
