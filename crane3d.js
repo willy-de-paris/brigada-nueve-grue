@@ -20,76 +20,87 @@
     const cardboard = new THREE.MeshLambertMaterial({ color: 0xc79a5b });
     const blue = new THREE.MeshLambertMaterial({ color: 0x12304f });
     const red = new THREE.MeshLambertMaterial({ color: 0xc0392b });
+    const grey = new THREE.MeshLambertMaterial({ color: 0x55606c });
     const rope = new THREE.MeshLambertMaterial({ color: 0xe8dcc0 });
 
-    const grid = new THREE.GridHelper(10, 20, 0x12304f, 0xb8c4d0);
-    scene.add(grid);
+    scene.add(new THREE.GridHelper(10, 20, 0x12304f, 0xb8c4d0));
 
-    function bar(a, b, r, mat) {
+    function add(parent, m) { parent.add(m); return m; }
+    function block(parent, w, h, d, mat, x, y, z) {
+      const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
+      m.position.set(x, y, z);
+      return add(parent, m);
+    }
+    function bar(parent, a, b, r, mat) {
       const d = new THREE.Vector3().subVectors(b, a);
       const m = new THREE.Mesh(new THREE.CylinderGeometry(r, r, d.length(), 10), mat);
       m.position.copy(a).add(b).multiplyScalar(0.5);
       m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize());
-      scene.add(m);
-      return m;
+      return add(parent, m);
     }
-    function block(w, h, d, mat, x, y, z) {
-      const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
-      m.position.set(x, y, z);
-      scene.add(m);
-      return m;
-    }
+    const V = (x, y, z) => new THREE.Vector3(x, y, z);
 
-    // Portique : deux cadres en A de part et d'autre, poutre à 5 m
-    const H = 5;
-    [-1.8, 1.8].forEach(x => {
-      bar(new THREE.Vector3(x, 0, -1.1), new THREE.Vector3(x, H, 0), 0.08, cardboard);
-      bar(new THREE.Vector3(x, 0, 1.1), new THREE.Vector3(x, H, 0), 0.08, cardboard);
-      bar(new THREE.Vector3(x, 1.2, -0.47), new THREE.Vector3(x, 1.2, 0.47), 0.04, cardboard);
-      block(0.4, 0.06, 2.4, blue, x, 0.03, 0);
-    });
-    block(4.0, 0.22, 0.3, cardboard, 0, H + 0.11, 0);
-    block(4.0, 0.04, 0.34, blue, 0, H + 0.24, 0);
+    // Base lestée (fixe)
+    block(scene, 2.6, 0.14, 2.6, cardboard, 0, 0.07, 0);
+    block(scene, 2.7, 0.04, 2.7, blue, 0, 0.01, 0);
 
-    // Treuil : tambour et manivelle sur le cadre gauche
-    const drum = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.5, 20), blue);
+    // Partie tournante : mât, flèche, tirant, treuil, lest, poulie
+    const swing = new THREE.Group();
+    scene.add(swing);
+
+    const MAST = 6.2, REACH = 3, TIP = 5.4;
+    add(swing, Object.assign(new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.17, MAST, 16), cardboard),
+      { position: V(0, 0.14 + MAST / 2, 0) }));
+    add(swing, Object.assign(new THREE.Mesh(new THREE.SphereGeometry(0.2, 16, 12), blue),
+      { position: V(0, 0.14, 0) })); // pivot au sol
+    add(swing, Object.assign(new THREE.Mesh(new THREE.SphereGeometry(0.16, 16, 12), red),
+      { position: V(0, 4.4, 0) })); // articulation de la flèche
+
+    bar(swing, V(0, 4.4, 0), V(REACH, TIP, 0), 0.07, cardboard);          // flèche
+    bar(swing, V(0, MAST + 0.1, 0), V(REACH, TIP, 0), 0.025, grey);        // tirant
+    block(swing, 0.3, 0.06, 0.3, blue, 0, MAST + 0.12, 0);
+
+    // Poulie en bout de flèche
+    const pulley = add(swing, Object.assign(new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.06, 20), red),
+      { position: V(REACH, TIP - 0.05, 0) }));
+    pulley.rotation.x = Math.PI / 2;
+
+    // Lest (contrepoids) du côté opposé à la flèche
+    block(swing, 0.8, 0.5, 0.8, grey, -0.9, 0.4, 0);
+
+    // Treuil sur le mât
+    const drum = add(swing, new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.5, 20), blue));
     drum.rotation.x = Math.PI / 2;
-    drum.position.set(-1.8, 1.7, 0.9);
-    scene.add(drum);
+    drum.position.set(0.45, 1.3, 0);
     const crank = new THREE.Group();
-    crank.position.set(-1.8, 1.7, 1.2);
-    const arm = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.05, 0.05), red);
-    arm.position.x = 0.25;
-    const handle = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.2, 8), red);
+    crank.position.set(0.45, 1.3, 0.38);
+    block(crank, 0.5, 0.05, 0.05, red, 0.25, 0, 0);
+    const handle = add(crank, new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.2, 8), red));
     handle.rotation.x = Math.PI / 2;
     handle.position.set(0.5, 0, 0.1);
-    crank.add(arm, handle);
-    scene.add(crank);
+    swing.add(crank);
 
-    // Chariot, corde, charge
-    const trolley = block(0.5, 0.2, 0.5, blue, 0, H - 0.1, 0);
-    const wheelL = block(0.08, 0.08, 0.5, red, -0.2, H - 0.02, 0);
-    const wheelR = block(0.08, 0.08, 0.5, red, 0.2, H - 0.02, 0);
-    const cord = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 1, 6), rope);
-    scene.add(cord);
-    const load = block(0.5, 0.5, 0.5, red, 0, 0.3, 0);
+    // Ficelle fixe : treuil -> haut du mât -> le long de la flèche
+    bar(swing, V(0.45, 1.5, 0.05), V(0.3, 4.45, 0.12), 0.012, rope);
+    bar(swing, V(0.3, 4.45, 0.12), V(REACH, TIP + 0.1, 0.06), 0.012, rope);
 
-    let T = 0, L = 0, theta = 0.7, phi = 1.15, dist = 12;
-    const target = new THREE.Vector3(0, 2.4, 0);
+    // Ficelle verticale et charge (longueur variable)
+    const cord = add(swing, new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 1, 6), rope));
+    const load = block(swing, 0.5, 0.5, 0.5, red, REACH, 0.3, 0);
+
+    let T = 0, L = 0, theta = 0.7, phi = 1.15, dist = 14;
+    const target = V(0, 2.8, 0);
 
     function pose() {
-      const x = (T - 0.5) * 3;
-      trolley.position.x = x;
-      wheelL.position.x = x - 0.2;
-      wheelR.position.x = x + 0.2;
-      const top = H - 0.2;
+      swing.rotation.y = -T * 1; // 1 rad de rotation = arc de 3 m (30 cm sur la maquette)
+      const top = TIP - 0.2;
       const loadTop = 0.55 + L * 4;
-      load.position.set(x, loadTop - 0.25, 0);
+      load.position.set(REACH, loadTop - 0.25, 0);
       cord.scale.y = top - loadTop;
-      cord.position.set(x, (top + loadTop) / 2, 0);
+      cord.position.set(REACH, (top + loadTop) / 2, 0);
       crank.rotation.z = -L * 12;
       drum.rotation.y = -L * 12;
-      oT.textContent = Math.round(T * 30) + ' cm';
+      oT.textContent = Math.round(T * 57.3) + '° (arc ' + Math.round(T * 30) + ' cm)';
       oL.textContent = Math.round(L * 40) + ' cm';
     }
 
@@ -107,12 +118,11 @@
       renderer.setSize(w, h);
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
-      dist = w < 500 ? 16 : 12;
+      dist = w < 500 ? 19 : 14;
       cam();
     }
     addEventListener('resize', resize);
 
-    // Rotation à la souris / au doigt
     let drag = false, lx = 0, ly = 0;
     box.addEventListener('pointerdown', e => { drag = true; lx = e.clientX; ly = e.clientY; box.setPointerCapture(e.pointerId); });
     box.addEventListener('pointerup', () => (drag = false));
@@ -124,7 +134,6 @@
       cam();
     });
 
-    // Curseurs et démo
     const sT = document.getElementById('sT'), sL = document.getElementById('sL');
     const oT = document.getElementById('oT'), oL = document.getElementById('oL');
     const demo = document.getElementById('demo');
@@ -137,7 +146,6 @@
       demo.textContent = playing ? 'Arrêter la démo' : 'Lancer la démo';
     });
 
-    // Ne dessiner que lorsque la section est visible
     let visible = true;
     new IntersectionObserver(en => (visible = en[0].isIntersecting)).observe(box);
 
@@ -145,7 +153,7 @@
       requestAnimationFrame(loop);
       if (!visible) return;
       if (playing) {
-        // cycle : lever, translater, descendre, revenir
+        // cycle : lever, tourner le mât, descendre, revenir
         const c = ((now - t0) / 1000 % 12) / 12;
         const ease = v => v * v * (3 - 2 * v);
         const seg = (a, b) => ease(Math.min(1, Math.max(0, (c - a) / (b - a))));
@@ -161,7 +169,7 @@
     pose();
     requestAnimationFrame(loop);
   }
-  
+
   if (typeof THREE !== 'undefined') {
     init();
   } else {
