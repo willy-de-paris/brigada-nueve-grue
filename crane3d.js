@@ -268,7 +268,16 @@
     requestAnimationFrame(loop);
   }
 
-  // === Lancer l'initialisation ===
-  // Ce script est chargé dynamiquement après vérification que Three.js est disponible
-  init();
+  // === Gestion du chargement ===
+  // Attend que le DOM soit prêt ET que Three.js soit chargé
+  function checkAndInit() {
+    if (document.readyState !== 'loading' && typeof THREE !== 'undefined') {
+      init();
+    }
+  }
+
+  // Essayer d'initialiser au chargement du DOM
+  document.addEventListener('DOMContentLoaded', checkAndInit);
+  // Fallback : réessayer au chargement complet de la page
+  window.addEventListener('load', checkAndInit);
 })();
