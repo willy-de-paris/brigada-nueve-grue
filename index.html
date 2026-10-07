@@ -22,6 +22,7 @@
     <a href="#maquette3d">3D</a>
     <a href="#calcul">Calcul</a>
     <a href="#suite">Suite</a>
+    <a href="#historique">Historique</a>
   </nav>
 </header>
 
@@ -34,10 +35,10 @@
     <div class="stats">
       <div><b>300 kg</b><span>charge</span></div>
       <div><b>4 m → 40 cm</b><span>levage</span></div>
-      <div><b>3 m → 30 cm</b><span>translation</span></div>
+      <div><b>3 m → 30 cm</b><span>rayon de rotation</span></div>
     </div>
   </div>
-  <img src="images/schema.png" alt="Schéma cinématique du portique à chariot avec palan à chaîne">
+  <img src="images/schema-cinematique-grue.png" alt="Schéma cinématique de la grue à flèche relevable avec treuil à manivelle">
 </section>
 
 <section id="projet">
@@ -131,21 +132,26 @@
 <section id="conceptions">
   <h2>Les trois conceptions</h2>
   <div class="tabs" role="tablist">
-    <button role="tab" aria-selected="true" data-tab="c1">1. Portique à chariot</button>
-    <button role="tab" aria-selected="false" data-tab="c2">2. Grue pivotante</button>
+    <button role="tab" aria-selected="false" data-tab="c1">1. Portique à chariot</button>
+    <button role="tab" aria-selected="true" data-tab="c2">2. Grue à flèche relevable ✓ retenue</button>
     <button role="tab" aria-selected="false" data-tab="c3">3. Chèvre à parallélogramme</button>
   </div>
-  <div class="panel" id="c1">
+  <div class="panel" id="c1" hidden>
     <p><strong>Principe :</strong> structure en portique (type A ou H) avec une poutre horizontale sur laquelle circule un chariot porte-palan. Les deux mouvements, vertical et horizontal, sont clairement séparés.</p>
-    <p><strong>Avec notre matériel :</strong> le carton fait les montants et la poutre, les plaques renforcent les zones sous charge, les pics et le fil de fer servent d'axes. Sans palan à chaîne, on réalise un treuil manuel démultiplié : manivelle, engrenages, tambour, ficelle, poulies.</p>
+    <p><strong>Avec notre matériel :</strong> le carton fait les montants et la poutre, les plaques renforcent les zones sous charge, les pics et le fil de fer servent d'axes. Sans palan à chaîne, on réalise un treuil manuel démultiplié.</p>
+    <div class="grid two">
+      <figure class="mini"><img src="images/schema.png" alt="Schéma cinématique du portique à chariot"><figcaption>Schéma de la conception 2.</figcaption></figure>
+      <figure class="mini"><img src="images/dimensionnement.png" alt="Dimensionnement du portique"><figcaption>Dimensionnement de la conception 2.</figcaption></figure>
+    </div>
   </div>
-  <div class="panel" id="c2" hidden>
-    <p><strong>Principe :</strong> un mât vertical pivotant porte une flèche relevable. Le levage se fait au treuil, la translation par rotation du mât.</p>
-    <p><strong>Limite :</strong> une charge éloignée du mât crée un fort moment de renversement. Il faut un lestage ou un ancrage, ce qui nuit à la démontabilité. Le pivot rigide et la base stable en carton sont aussi plus délicats.</p>
+  <div class="panel" id="c2">
+    <p><strong>Principe :</strong> un mât vertical pivotant porte une flèche articulée. Le levage se fait par un treuil à tambour avec manivelle démultipliée, et le mouvement horizontal par rotation du mât (rayon de 3 m).</p>
+    <p><strong>Limite :</strong> une charge éloignée du mât crée un fort moment de renversement. Il faut un lestage ou un ancrage de la base, ce qui est à concilier avec la démontabilité. Le pivot rigide et la base stable en carton sont aussi plus délicats à réaliser.</p>
+    <figure class="mini"><img src="images/schema-cinematique-grue.png" alt="Schéma cinématique de la grue à flèche relevable"><figcaption>Schéma cinématique de la conception 2.</figcaption></figure>
   </div>
   <div class="panel" id="c3" hidden>
     <p><strong>Principe :</strong> un trépied, un bras déformable en parallélogramme et un système de mouflage. La solution est compacte, légère et stable.</p>
-    <p><strong>Limite :</strong> il faut plusieurs liaisons pivot bien alignées. En carton, avec des axes en pics ou en fil de fer, les jeux, frottements et déformations gênent le fonctionnement, et le déplacement horizontal précis est difficile à régler.</p>
+    <p><strong>Limite :</strong> il faut plusieurs liaisons pivot bien alignées. En carton, avec des axes en pics ou en fil de fer, les jeux, frottements et déformations gênent le fonctionnement, et le réglage est difficile.</p>
   </div>
 </section>
 
@@ -153,7 +159,7 @@
   <h2>Comparatif</h2>
   <div class="table-wrap">
     <table class="cmp">
-      <thead><tr><th>Critère</th><th class="win">Portique + chariot</th><th>Grue pivotante</th><th>Trépied / parallélogramme</th></tr></thead>
+      <thead><tr><th>Critère</th><th>Portique + chariot</th><th class="win">Grue pivotante</th><th>Trépied / parallélogramme</th></tr></thead>
       <tbody>
         <tr><td>Compatibilité avec le carton</td><td>Très bonne</td><td>Moyenne</td><td>Moyenne</td></tr>
         <tr><td>Utilisation des poulies</td><td>Très bonne</td><td>Très bonne</td><td>Très bonne</td></tr>
@@ -168,39 +174,44 @@
       </tbody>
     </table>
   </div>
+  <p class="note">Ce tableau reprend l'analyse du document d'étude initial. Le groupe a retenu la grue à flèche relevable ; ses points faibles (stabilité, lestage) sont traités dans la section suivante.</p>
 </section>
 
 <section id="choix">
-  <h2>Solution retenue : le portique à chariot</h2>
+  <h2>Solution retenue : la grue à flèche relevable</h2>
+  <!-- À compléter par le groupe : justification détaillée du changement de choix (portique -> grue). -->
   <div class="grid two">
     <div>
-      <p>Nous avons comparé les trois solutions selon les contraintes du cahier des charges : lever 300 kg jusqu'à 4 m, les déplacer sur 3 m, utiliser uniquement l'énergie humaine, permettre l'usage par une seule personne, et obtenir un système simple, stable, démontable et transportable.</p>
-      <p>Nous avons retenu le <strong>portique à chariot mobile avec treuil manuel et système de poulies</strong>, simple à fabriquer avec le carton, les poulies, les engrenages, la ficelle et les pics à brochette.</p>
+      <p>Nous avons retenu la <strong>grue à flèche relevable avec treuil à manivelle</strong> : un mât vertical pivotant porte une flèche articulée.</p>
       <ul>
-        <li>Le <strong>chariot</strong> assure la translation de 3 m, soit 30 cm sur la maquette.</li>
-        <li>Le <strong>treuil démultiplié</strong> avec le palan assure le levage de 4 m, soit 40 cm sur la maquette.</li>
-        <li>Stable sans contrepoids important.</li>
-        <li>Engrenages et poulies réduisent l'effort de l'opérateur.</li>
+        <li>Le <strong>levage</strong> (4 m, soit 40 cm sur la maquette) est assuré par un treuil à tambour avec manivelle démultipliée.</li>
+        <li>Le <strong>mouvement horizontal</strong> se fait par rotation du mât, avec un rayon de 3 m (30 cm sur la maquette).</li>
+        <li>La flèche est maintenue par un vérin ou un tirant, et la base est lestée ou ancrée.</li>
+        <li>Solution intéressante du point de vue cinématique, qui exploite les engrenages, poulies, ficelle et axes fournis.</li>
       </ul>
-      <p>C'est le meilleur compromis entre simplicité, stabilité, efficacité, ergonomie et facilité de réalisation.</p>
     </div>
-    <figure>
-      <img src="images/dimensionnement.png" alt="Dimensionnement clé : palan, chariot et structure">
-      <figcaption>Dimensionnement de la conception initiale (palan à chaîne manuel).</figcaption>
-    </figure>
+    <div class="panel">
+      <h3 style="margin-top:0">Points de vigilance</h3>
+      <ul>
+        <li><strong>Moment de renversement :</strong> 300 kg à 3 m du mât donnent environ 300 × 9,81 × 3 ≈ 8 800 N·m (charge seule, hors poids propre).</li>
+        <li><strong>Base :</strong> lestage ou ancrage à concilier avec la démontabilité et la transportabilité.</li>
+        <li><strong>Maquette :</strong> pivot rigide et base stable en carton, plus délicats à réaliser qu'un portique.</li>
+      </ul>
+    </div>
   </div>
   <h3>Chaîne cinématique de la maquette</h3>
   <ol class="chain">
-    <li>Manivelle</li><li>Train d'engrenages</li><li>Tambour</li><li>Ficelle</li><li>Poulie(s)</li><li>Charge</li>
+    <li>Manivelle</li><li>Train d'engrenages</li><li>Tambour</li><li>Ficelle</li><li>Poulie en bout de flèche</li><li>Charge</li>
   </ol>
+  <p class="note">Le déplacement horizontal est obtenu séparément, par la rotation du mât.</p>
 </section>
 
 <section id="maquette3d">
   <h2>Maquette 3D interactive</h2>
-  <p>Fais glisser pour tourner autour du portique. Les curseurs commandent le chariot (3 m, soit 30 cm sur la maquette) et le levage (4 m, soit 40 cm).</p>
-  <div id="crane3d" aria-label="Portique 3D interactif"></div>
+  <p>Fais glisser pour tourner autour de la grue. Les curseurs commandent la rotation du mât (rayon de 3 m, soit 30 cm d'arc sur la maquette) et le levage (4 m, soit 40 cm).</p>
+  <div id="crane3d" aria-label="Grue à flèche relevable 3D interactive"></div>
   <div class="ctrl">
-    <label>Chariot : <output id="oT">0 cm</output><input id="sT" type="range" min="0" max="1" step="0.001" value="0"></label>
+    <label>Rotation du mât : <output id="oT">0°</output><input id="sT" type="range" min="0" max="1" step="0.001" value="0"></label>
     <label>Levage : <output id="oL">0 cm</output><input id="sL" type="range" min="0" max="1" step="0.001" value="0"></label>
     <button id="demo" type="button">Lancer la démo</button>
   </div>
@@ -208,7 +219,7 @@
 
 <section id="calcul" class="alt">
   <h2>Calcul d'effort</h2>
-  <p>Effort = masse × 9,81 ÷ rapport de réduction. Avec un palan 1/60 et 300 kg, on obtient environ 49 N (5 kg). Modifie les valeurs pour tester.</p>
+  <p>Effort = masse × 9,81 ÷ rapport de réduction. À titre d'exemple, un rapport de 1/60 avec 300 kg donne environ 49 N (5 kg). Modifie les valeurs pour tester.</p>
   <form class="calc" onsubmit="return false">
     <label>Masse (kg)<input id="mass" type="number" value="300" min="0" step="any"></label>
     <label>Rapport de réduction (1/N)<input id="ratio" type="number" value="60" min="1" step="any"></label>
@@ -217,13 +228,36 @@
   <p class="note">Pour la maquette, le rapport réel reste à calculer : il faut relever les dents des engrenages et le diamètre du tambour. Le coton résiste à 1 kg et le jute à 2 kg, ce qui limite la charge d'essai.</p>
 </section>
 
+<section id="historique" class="alt">
+  <h2>Historique des actions</h2>
+  <p>Ce qui a été fait jusqu'ici, dans l'ordre.</p>
+  <ol class="timeline">
+    <li><b>Reformulation du projet</b><span>Contexte, mots-clés, contraintes, problématique, objectifs, hypothèses, délai et livrables remis au propre.</span></li>
+    <li><b>Mise en forme du cahier des charges</b><span>Plan d'action global et plan d'action de la boucle 1 (Conception) structurés en tableaux.</span></li>
+    <li><b>Étude du matériel disponible</b><span>Ficelles, carton, poulies, engrenages, plaques, boulons, balance : ce qui sert à la maquette 1:10.</span></li>
+    <li><b>Analyse des trois conceptions</b><span>Portique à chariot, grue pivotante et chèvre à parallélogramme, avec leurs forces et leurs limites.</span></li>
+    <li><b>Comparaison des solutions</b><span>Tableau comparatif sur dix critères : carton, poulies, engrenages, fabrication, stabilité, translation, levage, réglage, jeu, matériel.</span></li>
+    <li><b>Premier choix : portique à chariot</b><span>Retenu avec treuil manuel démultiplié et système de poulies, justification rédigée.</span></li>
+    <li><b>Contrainte ajoutée</b><span>Utilisation possible par une seule personne.</span></li>
+    <li><b>Premier dimensionnement</b><span>Palan 1/60 : effort d'environ 49 N (5 kg) pour 300 kg. Rapport réel de la maquette à calculer.</span></li>
+    <li><b>Création du site web</b><span>Site responsive en HTML, CSS et JavaScript avec les images du schéma et du dimensionnement.</span></li>
+    <li><b>Maquette 3D et calculateur</b><span>Portique 3D interactif (chariot, levage, démo animée) et calculateur d'effort.</span></li>
+    <li><b>Identité du groupe et README</b><span>Nom La Brigada Nueve ajouté au site, README du dépôt rédigé.</span></li>
+    <li><b>Dépôt GitHub créé</b><span>Dépôt brigada-nueve-grue pour l'hébergement du site.</span></li>
+    <li><b>Vérification du document choix_engin.pdf</b><span>Même analyse des trois conceptions que la version précédente.</span></li>
+    <li><b>Changement de conception</b><span>La grue à flèche relevable avec treuil à manivelle remplace le portique à chariot.</span></li>
+    <li><b>Mise à jour du site</b><span>Textes, schéma, comparatif, étapes suivantes et maquette 3D adaptés à la grue à flèche relevable.</span></li>
+  </ol>
+</section>
+
 <section id="suite">
   <h2>Suite du projet</h2>
   <ol class="steps">
-    <li>Dimensionner le portique</li>
-    <li>Définir précisément le chariot</li>
+    <li>Dimensionner le mât et la flèche</li>
+    <li>Étudier la stabilité : moment de renversement, lestage ou ancrage de la base</li>
     <li>Déterminer le rapport de réduction réalisable avec les engrenages fournis</li>
-    <li>Concevoir le treuil et les poulies</li>
+    <li>Concevoir le treuil, la manivelle et les poulies</li>
+    <li>Réaliser un pivot rigide pour le mât</li>
     <li>Réaliser le schéma cinématique et les plans de la maquette à l'échelle 1:10</li>
   </ol>
 </section>

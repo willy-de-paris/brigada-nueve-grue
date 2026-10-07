@@ -48,7 +48,7 @@ table{border-collapse:collapse;width:100%;min-width:520px}
 th,td{padding:.6rem .9rem;text-align:left;border-bottom:1px solid var(--line)}
 th{background:var(--blue);color:#fff;font-weight:600}
 .cmp th.win{background:var(--card);color:var(--ink)}
-.cmp td:nth-child(2){background:#fbf3e6;font-weight:600}
+.cmp td:nth-child(3){background:#fbf3e6;font-weight:600}
 
 .tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
 .tabs button{font:inherit;font-weight:600;padding:.6rem 1rem;border:2px solid var(--blue);background:#fff;color:var(--blue);cursor:pointer}
@@ -100,3 +100,14 @@ footer{background:var(--blue);color:#fff;text-align:center;padding:1.5rem;font-f
 .ctrl button{font:600 1rem "Archivo",sans-serif;padding:.7rem 1.2rem;background:var(--blue);color:#fff;border:0;cursor:pointer}
 .ctrl button:hover{background:var(--card);color:var(--ink)}
 @media (prefers-reduced-motion:reduce){.hero-text,.hero img{animation:none}}
+
+/* Historique */
+.timeline{list-style:none;padding:0 0 0 1.6rem;border-left:3px solid var(--blue);margin-top:1.5rem}
+.timeline li{position:relative;background:#fff;padding:.7rem 1rem;margin-bottom:.8rem;border:1px solid var(--line)}
+.timeline li::before{content:"✓";position:absolute;left:-2.55rem;top:.6rem;width:1.7rem;height:1.7rem;border-radius:50%;
+  background:var(--card);color:var(--ink);font:800 .9rem "Archivo",sans-serif;display:grid;place-items:center;border:3px solid var(--alt)}
+.timeline b{display:block;font-family:"Archivo",sans-serif;color:var(--blue)}
+.timeline span{font-size:.95rem;color:var(--muted)}
+
+.mini{max-width:420px}
+.panel figure{margin-top:1rem}
