@@ -96,16 +96,19 @@
     const TIP = 5.4;     // Hauteur de l'extrémité de la flèche
 
     // Mât vertical (cylindre)
-    add(swing, Object.assign(new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.17, MAST, 16), cardboard),
-      { position: V(0, 0.14 + MAST / 2, 0) }));
+    const mastMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.17, MAST, 16), cardboard);
+    mastMesh.position.set(0, 0.14 + MAST / 2, 0);
+    add(swing, mastMesh);
     
     // Pivot au sol (sphère bleue)
-    add(swing, Object.assign(new THREE.Mesh(new THREE.SphereGeometry(0.2, 16, 12), blue),
-      { position: V(0, 0.14, 0) }));
+    const pivotMesh = new THREE.Mesh(new THREE.SphereGeometry(0.2, 16, 12), blue);
+    pivotMesh.position.set(0, 0.14, 0);
+    add(swing, pivotMesh);
     
     // Articulation de la flèche (sphère rouge)
-    add(swing, Object.assign(new THREE.Mesh(new THREE.SphereGeometry(0.16, 16, 12), red),
-      { position: V(0, 4.4, 0) }));
+    const jointMesh = new THREE.Mesh(new THREE.SphereGeometry(0.16, 16, 12), red);
+    jointMesh.position.set(0, 4.4, 0);
+    add(swing, jointMesh);
 
     // Flèche (barre en carton)
     bar(swing, V(0, 4.4, 0), V(REACH, TIP, 0), 0.07, cardboard);
@@ -117,9 +120,10 @@
     block(swing, 0.3, 0.06, 0.3, blue, 0, MAST + 0.12, 0);
 
     // Poulie en bout de flèche (cylindre rouge)
-    const pulley = add(swing, Object.assign(new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.06, 20), red),
-      { position: V(REACH, TIP - 0.05, 0) }));
+    const pulley = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.06, 20), red);
+    pulley.position.set(REACH, TIP - 0.05, 0);
     pulley.rotation.x = Math.PI / 2; // Rotation pour orienter la poulie
+    add(swing, pulley);
 
     // Lest (contrepoids) du côté opposé à la flèche
     block(swing, 0.8, 0.5, 0.8, grey, -0.9, 0.4, 0);
