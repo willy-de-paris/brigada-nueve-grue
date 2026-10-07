@@ -266,6 +266,18 @@
 <footer>La Brigada Nueve · Semaine d'intégration · Conception d'une grue manuelle · Maquette 1:10</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="script.js"></script>
-<script src="crane3d.js" defer></script>
+<script>
+// Attendre que Three.js soit chargé avant d'exécuter crane3d.js
+function loadCrane3D() {
+  if (typeof THREE !== 'undefined') {
+    var script = document.createElement('script');
+    script.src = 'crane3d.js';
+    document.body.appendChild(script);
+  } else {
+    setTimeout(loadCrane3D, 100);
+  }
+}
+loadCrane3D();
+</script>
 </body>
 </html>
