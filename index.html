@@ -22,7 +22,9 @@
     <a href="#maquette3d">3D</a>
     <a href="#calcul">Calcul</a>
     <a href="#suite">Suite</a>
+    <a href="#boucle2">Boucle 2</a>
     <a href="#historique">Historique</a>
+    <a href="#bilan">Bilan</a>
   </nav>
 </header>
 
@@ -35,10 +37,10 @@
     <div class="stats">
       <div><b>300 kg</b><span>charge</span></div>
       <div><b>4 m → 40 cm</b><span>levage</span></div>
-      <div><b>3 m → 30 cm</b><span>rayon de rotation</span></div>
+      <div><b>3 m → 30 cm</b><span>portée visée (maquette : 13,6 cm)</span></div>
     </div>
   </div>
-  <img src="images/schema-cinematique-grue.png" alt="Schéma cinématique de la grue à flèche relevable avec treuil à manivelle">
+  <img src="images/schema-grue-contrepoids.png" alt="Schéma cinématique de la grue pivotante à bras horizontal, contrepoids et treuil à manivelle">
 </section>
 
 <section id="projet">
@@ -133,23 +135,21 @@
   <h2>Les trois conceptions</h2>
   <div class="tabs" role="tablist">
     <button role="tab" aria-selected="false" data-tab="c1">1. Portique à chariot</button>
-    <button role="tab" aria-selected="true" data-tab="c2">2. Grue à flèche relevable ✓ retenue</button>
+    <button role="tab" aria-selected="true" data-tab="c2">2. Grue pivotante ✓ retenue</button>
     <button role="tab" aria-selected="false" data-tab="c3">3. Chèvre à parallélogramme</button>
   </div>
   <div class="panel" id="c1" hidden>
     <p><strong>Principe :</strong> structure en portique (type A ou H) avec une poutre horizontale sur laquelle circule un chariot porte-palan. Les deux mouvements, vertical et horizontal, sont clairement séparés.</p>
     <p><strong>Avec notre matériel :</strong> le carton fait les montants et la poutre, les plaques renforcent les zones sous charge, les pics et le fil de fer servent d'axes. Sans palan à chaîne, on réalise un treuil manuel démultiplié.</p>
-    <!-- <div class="grid two">
-      <figure class="mini"><img src="images/schema.png" alt="Schéma cinématique du portique à chariot"><figcaption>Schéma de la conception 2.</figcaption></figure>
-      <figure class="mini"><img src="images/dimensionnement.png" alt="Dimensionnement du portique"><figcaption>Dimensionnement de la conception 2.</figcaption></figure>
-    </div> -->
+    
   </div>
   <div class="panel" id="c2">
-    <p><strong>Principe :</strong> un mât vertical pivotant porte une flèche articulée. Le levage se fait par un treuil à tambour avec manivelle démultipliée, et le mouvement horizontal par rotation du mât (rayon de 3 m).</p>
-    <p><strong>Limite :</strong> une charge éloignée du mât crée un fort moment de renversement. Il faut un lestage ou un ancrage de la base, ce qui est à concilier avec la démontabilité. Le pivot rigide et la base stable en carton sont aussi plus délicats à réaliser.</p>
+    <p><strong>Principe :</strong> un mât vertical pivotant porte une flèche. Le levage se fait par un treuil à tambour avec manivelle démultipliée, et le mouvement horizontal par rotation du mât.</p>
+    <p><strong>Version retenue :</strong> flèche de 15 cm inclinée de 25° côté charge, petit bras horizontal de 12 cm de l'autre côté, et un fil de fer qui relie le bout du petit bras à la base. Le mât tourne dans deux plaques de guidage (appuis plans) et un pivot central.</p>
+    <p><strong>Limite :</strong> la stabilité et le pivot. Le fil de fer équilibre le moment de la charge, mais le pivot rigide et la base en carton sont délicats à réaliser.</p>
 <div class="grid two">
-      <figure class="mini"><img src="images/schema.png" alt="Schéma cinématique du portique à chariot"><figcaption>Schéma de la conception 2.</figcaption></figure>
-      <figure class="mini"><img src="images/dimensionnement.png" alt="Dimensionnement du portique"><figcaption>Dimensionnement de la conception 2.</figcaption></figure>
+      <figure class="mini"><img src="images/schema.png" alt="Schéma cinématique du portique à chariot"><figcaption>Schéma de la conception 1.</figcaption></figure>
+      <figure class="mini"><img src="images/dimensionnement.png" alt="Dimensionnement du portique"><figcaption>Dimensionnement de la conception 1.</figcaption></figure>
     </div>  </div>
   <div class="panel" id="c3" hidden>
     <p><strong>Principe :</strong> un trépied, un bras déformable en parallélogramme et un système de mouflage. La solution est compacte, légère et stable.</p>
@@ -176,28 +176,30 @@
       </tbody>
     </table>
   </div>
-  <p class="note">Ce tableau reprend l'analyse du document d'étude initial. Le groupe a retenu la grue à flèche relevable ; ses points faibles (stabilité, lestage) sont traités dans la section suivante.</p>
+  <p class="note">Ce tableau reprend l'analyse du document d'étude initial. Le groupe a retenu la grue pivotante (conception 2), avec une flèche inclinée et un fil de fer vers la base ; ses points faibles (stabilité, pivot) sont traités dans la section suivante.</p>
 </section>
 
 <section id="choix">
-  <h2>Solution retenue : la grue à flèche relevable</h2>
+  <h2>Solution retenue : la grue pivotante</h2>
   <!-- À compléter par le groupe : justification détaillée du changement de choix (portique -> grue). -->
   <div class="grid two">
     <div>
-      <p>Nous avons retenu la <strong>grue à flèche relevable avec treuil à manivelle</strong> : un mât vertical pivotant porte une flèche articulée.</p>
+      <p>Nous avons retenu la <strong>grue pivotante avec treuil à manivelle</strong> (conception 2) : un mât vertical pivotant porte une flèche de 15 cm inclinée de 25°, et un fil de fer relie l'autre extrémité du bras à la base.</p>
       <ul>
         <li>Le <strong>levage</strong> (4 m, soit 40 cm sur la maquette) est assuré par un treuil à tambour avec manivelle démultipliée.</li>
-        <li>Le <strong>mouvement horizontal</strong> se fait par rotation du mât, avec un rayon de 3 m (30 cm sur la maquette).</li>
-        <li>La flèche est maintenue par un vérin ou un tirant, et la base est lestée ou ancrée.</li>
-        <li>Solution intéressante du point de vue cinématique, qui exploite les engrenages, poulies, ficelle et axes fournis.</li>
+        <li>Le <strong>mouvement horizontal</strong> se fait par rotation du mât.</li>
+        <li>Le mât est guidé par deux plaques avec appuis plans et par un pivot central.</li>
+        <li>Le <strong>fil de fer</strong> vers la base équilibre le moment de la charge, sans ajouter de masse.</li>
+        <li>Cinématique simple, avec les engrenages, poulies, ficelle et axes fournis.</li>
       </ul>
     </div>
     <div class="panel">
       <h3 style="margin-top:0">Points de vigilance</h3>
       <ul>
-        <li><strong>Moment de renversement :</strong> 300 kg à 3 m du mât donnent environ 300 × 9,81 × 3 ≈ 8 800 N·m (charge seule, hors poids propre).</li>
-        <li><strong>Base :</strong> lestage ou ancrage à concilier avec la démontabilité et la transportabilité.</li>
-        <li><strong>Maquette :</strong> pivot rigide et base stable en carton, plus délicats à réaliser qu'un portique.</li>
+        <li><strong>Portée :</strong> une flèche de 15 cm à 25° donne 15 × cos 25° ≈ 13,6 cm, au lieu des 30 cm visés. Pour atteindre 30 cm, la flèche devrait mesurer environ 33 cm.</li>
+        <li><strong>Moment de la charge :</strong> 300 kg à 3 m du mât donnent environ 300 × 9,81 × 3 ≈ 8 800 N·m (charge seule).</li>
+        <li><strong>Fil de fer :</strong> tension d'environ 1,1 fois la charge ; du fil de fer, pas de la ficelle.</li>
+        <li><strong>Maquette :</strong> pivot rigide et plaques de guidage à renforcer.</li>
       </ul>
     </div>
   </div>
@@ -210,8 +212,8 @@
 
 <section id="maquette3d">
   <h2>Maquette 3D interactive</h2>
-  <p>Fais glisser pour tourner autour de la grue. Les curseurs commandent la rotation du mât (rayon de 3 m, soit 30 cm d'arc sur la maquette) et le levage (4 m, soit 40 cm).</p>
-  <div id="crane3d" aria-label="Grue à flèche relevable 3D interactive"></div>
+  <p>Fais glisser pour tourner autour de la grue (le fil de fer relie le petit bras à la base). Les curseurs commandent la rotation du mât (flèche de 15 cm inclinée de 25°, soit une portée d'environ 13,6 cm sur la maquette) et le levage (4 m, soit 40 cm).</p>
+  <div id="crane3d" aria-label="Grue pivotante 3D interactive"></div>
   <div class="ctrl">
     <label>Rotation du mât : <output id="oT">0°</output><input id="sT" type="range" min="0" max="1" step="0.001" value="0"></label>
     <label>Levage : <output id="oL">0 cm</output><input id="sL" type="range" min="0" max="1" step="0.001" value="0"></label>
@@ -228,6 +230,193 @@
     <output id="result" aria-live="polite"></output>
   </form>
   <p class="note">Pour la maquette, le rapport réel reste à calculer : il faut relever les dents des engrenages et le diamètre du tambour. Le coton résiste à 1 kg et le jute à 2 kg, ce qui limite la charge d'essai.</p>
+</section>
+
+<section id="boucle2">
+  <h2>Boucle 2 : Fabrication</h2>
+  <p><a class="dl" href="Projet_grue_Brigada_Nueve.docx" download>Télécharger le document Word complet</a></p>
+  <div class="grid two">
+    <div>
+      <h3>Définir le cadre</h3>
+      <ul>
+        <li>Fabriquer la maquette</li>
+        <li>Faire les documents définitifs : les plans, les instructions de montage, la nomenclature et le schéma cinématique</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contraintes</h3>
+      <ul>
+        <li>Délais et respect du cahier des charges</li>
+        <li>Matériel imposé</li>
+      </ul>
+    </div>
+  </div>
+  <h3>Plan d'action</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Étape</th><th>Durée</th><th>Qui</th></tr></thead>
+      <tbody>
+        <tr><td>Dimensionner la maquette</td><td>1 h</td><td>Groupe</td></tr>
+        <tr><td>Définir le système de levage et le système de réduction des charges</td><td>1 h</td><td>Rezan</td></tr>
+        <tr><td>Écrire les instructions de montage</td><td></td><td></td></tr>
+        <tr><td>Refaire le schéma cinématique</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Les valeurs chiffrées ci-dessous sont des propositions de départ, à confirmer avec les mesures réelles du matériel.</p>
+
+  <h3>Schéma cinématique de la maquette</h3>
+  <figure>
+    <img src="images/schema-grue-contrepoids.png" alt="Schéma cinématique coté de la grue pivotante avec fil de fer et treuil à manivelle">
+    <figcaption>Échelle 1:10 : flèche de 15 cm inclinée de 25°, mât de 62 cm, levage de 40 cm.</figcaption>
+  </figure>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rep.</th><th>Liaison</th><th>Rôle</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Pivot central, mât / bâti</td><td>Rotation du mât autour de l'axe vertical</td></tr>
+        <tr><td>2</td><td>Appui plan et butée, plaque haute</td><td>Guide le mât et reprend son poids</td></tr>
+        <tr><td>3</td><td>Appui plan et butée, plaque basse</td><td>Guide le mât en pied</td></tr>
+        <tr><td>4</td><td>Poulie de renvoi, en haut du mât</td><td>Guidage de la ficelle vers la flèche</td></tr>
+        <tr><td>5</td><td>Poulie en bout de flèche</td><td>Renvoi de la ficelle vers la charge</td></tr>
+        <tr><td>6</td><td>Tambour sur la plaque du treuil</td><td>Enroulement de la ficelle : levage</td></tr>
+        <tr><td>7</td><td>Pignon et manivelle</td><td>Entrée de l'effort humain</td></tr>
+        <tr><td>8</td><td>Engrènement pignon / roue</td><td>Réduction de l'effort</td></tr>
+        <tr><td>9</td><td>Attache du fil de fer sur le petit bras</td><td>Reprend le moment de la charge</td></tr>
+        <tr><td>10</td><td>Ancrage du fil de fer sur la base</td><td>Ferme la boucle d'efforts dans la structure</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details class="acc" open>
+    <summary>1. Dimensionnement de la maquette (échelle 1:10)</summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Élément</th><th>Réel</th><th>Maquette</th><th>Remarque</th></tr></thead>
+        <tbody>
+          <tr><td>Levage</td><td>4 m</td><td>40 cm</td><td>Imposé</td></tr>
+          <tr><td>Portée horizontale (axe du mât à la charge)</td><td>≈ 1,36 m</td><td>≈ 13,6 cm</td><td>Cahier des charges : 30 cm</td></tr>
+          <tr><td>Hauteur du mât</td><td>6,2 m</td><td>62 cm</td><td>Carton roulé ou multicouche</td></tr>
+          <tr><td>Flèche côté charge</td><td>1,5 m</td><td>15 cm</td><td>Inclinée de 25° (hauteur gagnée ≈ 6,3 cm)</td></tr>
+          <tr><td>Petit bras (attache du fil de fer)</td><td>≈ 1,2 m</td><td>≈ 12 cm</td><td>Horizontal, côté opposé</td></tr>
+          <tr><td>Base lestée</td><td>3 × 3 m</td><td>30 × 30 cm</td><td>Porte les deux plaques de guidage</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Écart : avec une flèche de 15 cm à 25°, la portée est de 15 × cos 25° ≈ 13,6 cm, pas 30 cm. Pour 30 cm, il faudrait une flèche d'environ 33 cm (30 ÷ cos 25°). Au groupe de trancher.</p>
+    <h3>Charge d'essai et ficelle</h3>
+    <ul>
+      <li>Coton : 1 kg ; jute : 2 kg. Avec un facteur de sécurité de 2, la charge d'essai proposée est de 1 kg avec la jute.</li>
+      <li>Avec un mouflage à 2 brins, chaque brin porte 0,5 kg pour 1 kg de charge : le coton reste utilisable.</li>
+      <li>La charge d'essai finale est à valider avec les encadrants.</li>
+    </ul>
+    <h3>Équilibrage par le fil de fer</h3>
+    <p>Le fil relie le bout du petit bras à la base et équilibre le moment de la charge autour de l'axe du mât : <strong>tension × 12 cm = charge × 13,6 cm</strong>.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Charge d'essai</th><th>Tension du fil</th><th>Calcul</th></tr></thead>
+        <tbody>
+          <tr><td>0,5 kg</td><td>≈ 0,57 kg</td><td>0,5 × 13,6 ÷ 12</td></tr>
+          <tr><td>1 kg</td><td>≈ 1,13 kg</td><td>1 × 13,6 ÷ 12</td></tr>
+          <tr><td>2 kg</td><td>≈ 2,27 kg</td><td>2 × 13,6 ÷ 12</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li><strong>Fixation :</strong> le fil descend presque à la verticale du bout du petit bras jusqu'à la base, hors des plaques. Accroché au milieu de l'arc de rotation, il varie de moins de 0,5 cm de longueur. Un petit élastique absorbe cette variation.</li>
+      <li><strong>Matériau :</strong> du fil de fer, car la tension est trop proche de la limite de la jute (2 kg).</li>
+      <li><strong>Pivot :</strong> il reprend la charge et la tension du fil (environ 2,1 kg pour 1 kg de charge) : plaques et pied du mât à renforcer.</li>
+      <li><strong>Stabilité :</strong> la charge reste au-dessus de la base (13,6 cm &lt; 15 cm). Avec une flèche de 33 cm, il faudrait lester la base d'au moins 1,5 kg ou l'élargir.</li>
+      <li>Ne jamais lever la charge sans le fil de fer tendu.</li>
+    </ul>
+  </details>
+
+  <details class="acc">
+    <summary>2. Système de levage et réduction des charges</summary>
+    <p><strong>Chaîne :</strong> manivelle → train d'engrenages → tambour → ficelle → poulie de renvoi → poulie en bout de flèche → charge.</p>
+    <p><strong>Rapport total = rapport des engrenages × (longueur de la manivelle ÷ rayon du tambour) × nombre de brins.</strong> Effort théorique : F = m × 9,81 ÷ rapport total. Objectif : un rapport de 60 (principe de la conception initiale, 1/60).</p>
+    <h3>Exemple (valeurs à remplacer par les mesures)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Paramètre</th><th>Valeur d'exemple</th><th>Rapport apporté</th></tr></thead>
+        <tbody>
+          <tr><td>Longueur de la manivelle</td><td>6 cm</td><td>6 (tambour de rayon 1 cm)</td></tr>
+          <tr><td>Tambour</td><td>Ø 2 cm</td><td></td></tr>
+          <tr><td>Nombre de brins (mouflage)</td><td>2</td><td>2</td></tr>
+          <tr><td>Train d'engrenages nécessaire</td><td>5 (60 ÷ 12)</td><td>5</td></tr>
+          <tr><td>Rapport total visé</td><td></td><td>60</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li>Effort théorique pour 1 kg : 9,81 ÷ 60 ≈ 0,16 N. Les frottements seront bien plus grands : l'effort réel sera mesuré à la balance suspendue.</li>
+      <li>Ficelle à enrouler pour 40 cm de levage : 0,40 m × 2 brins = 0,80 m.</li>
+      <li>Tours du tambour : 80 cm ÷ (π × 2 cm) ≈ 12,7. Tours de manivelle : 12,7 × 5 ≈ 64.</li>
+    </ul>
+    <p class="note">À relever : nombre de dents des trois engrenages, diamètre utile du tambour, longueur de la manivelle, masse de la charge, tension du fil de fer.</p>
+  </details>
+
+  <details class="acc">
+    <summary>3. Instructions de montage</summary>
+    <ol>
+      <li>Découper dans le carton la base de 30 × 30 cm en deux épaisseurs collées, et y fixer le lest.</li>
+      <li>Fabriquer le mât de 62 cm en carton roulé ou multicouche. Coller deux butées (bagues en carton) à hauteur des deux supports.</li>
+      <li>Réaliser les deux supports de guidage : une plaque percée au centre (jeu juste suffisant) avec un appui plan sous la butée. Les fixer à la base, en haut et en bas du mât (cadre ou montants à préciser).</li>
+      <li>Monter le pivot central : un manchon en carton autour du mât, entre les deux supports.</li>
+      <li>Fixer le bras en haut du mât, à 62 cm du sol : côté charge, une flèche de 15 cm inclinée de 25° (gabarit en carton) ; côté opposé, un petit bras horizontal d'environ 12 cm.</li>
+      <li>Fixer le fil de fer au bout du petit bras, le tendre presque verticalement jusqu'à la base et l'accrocher au milieu de l'arc de rotation (avec un petit élastique).</li>
+      <li>Fixer sur le mât, côté charge, une plaque rigide 9 × 12 cm qui porte le treuil : tambour, engrenages sur axes en pics à brochette, manivelle en fil de fer.</li>
+      <li>Installer la poulie de renvoi en haut du mât et la poulie en bout de flèche (à environ 13,6 cm de l'axe).</li>
+      <li>Fixer la ficelle de jute sur le tambour, la faire passer sur les deux poulies, puis l'accrocher à la charge.</li>
+      <li>Régler la tension du fil de fer, vérifier la rotation du mât et l'enroulement de la ficelle, puis faire un premier essai à vide.</li>
+    </ol>
+    <p><strong>Démontage :</strong> retirer la charge, la ficelle et le fil de fer, détacher le bras du mât, puis sortir le mât des deux supports. Le treuil reste sur sa plaque.</p>
+  </details>
+
+  <details class="acc">
+    <summary>4. Nomenclature</summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Rep.</th><th>Désignation</th><th>Qté</th><th>Matériel / remarque</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Base 30 × 30 cm</td><td>1</td><td>Carton, 2 épaisseurs collées</td></tr>
+          <tr><td>2</td><td>Lest de la base</td><td>1 kg env.</td><td>Poids de référence, à ajuster</td></tr>
+          <tr><td>3</td><td>Mât (62 cm)</td><td>1</td><td>Carton roulé ou multicouche</td></tr>
+          <tr><td>4</td><td>Plaques de guidage</td><td>2</td><td>Carton rigide ou plaques 9 × 12 cm, percées</td></tr>
+          <tr><td>5</td><td>Appuis plans et butées du mât</td><td>2</td><td>Carton collé ; bague sur le mât</td></tr>
+          <tr><td>6</td><td>Manchon du pivot central</td><td>1</td><td>Carton</td></tr>
+          <tr><td>7</td><td>Bras : flèche de 15 cm à 25° et petit bras de 12 cm</td><td>1</td><td>Carton renforcé</td></tr>
+          <tr><td>8</td><td>Fil de fer de rappel</td><td>≈ 65 cm</td><td>Du petit bras à la base, avec un petit élastique</td></tr>
+          <tr><td>9</td><td>Plaque rigide du treuil</td><td>1</td><td>Plaque 9 × 12 cm fixée au mât</td></tr>
+          <tr><td>10</td><td>Tambour</td><td>1</td><td>À définir (Ø 2 cm proposé)</td></tr>
+          <tr><td>11</td><td>Engrenages du train de réduction</td><td>2 à 3</td><td>Fournis, à compter après relevé</td></tr>
+          <tr><td>12</td><td>Axes du treuil</td><td>3</td><td>Pics à brochette</td></tr>
+          <tr><td>13</td><td>Manivelle (≈ 6 cm)</td><td>1</td><td>Fil de fer et carton</td></tr>
+          <tr><td>14</td><td>Poulie de renvoi et poulie de bout de flèche</td><td>2</td><td>Poulies fournies</td></tr>
+          <tr><td>15</td><td>Poulie mobile (mouflage)</td><td>1</td><td>Optionnelle</td></tr>
+          <tr><td>16</td><td>Ficelle de jute Ø 2,5 mm</td><td>≈ 1,5 m</td><td>Résiste à 2 kg</td></tr>
+          <tr><td>17</td><td>Charge d'essai</td><td>1 kg</td><td>Poids de référence</td></tr>
+          <tr><td>18</td><td>Boulons avec écrous</td><td>2 à 4</td><td>Selon les assemblages</td></tr>
+          <tr><td>19</td><td>Colle chaude</td><td>—</td><td>Assemblages</td></tr>
+          <tr><td>20</td><td>Balance suspendue</td><td>1</td><td>Mesure de l'effort à la manivelle</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Quantités indicatives, à confirmer après le montage.</p>
+  </details>
+
+  <details class="acc">
+    <summary>5. Essais et vérification</summary>
+    <ul class="check">
+      <li>Levage de 40 cm obtenu</li>
+      <li>Rotation du mât : arc de 13,6 cm (environ 57°) sans blocage</li>
+      <li>La maquette ne bascule pas avec la charge d'essai à pleine portée et le fil de fer tendu</li>
+      <li>Le fil de fer ne gêne pas la rotation du mât</li>
+      <li>Effort mesuré à la manivelle avec la balance suspendue, puis comparé à l'effort théorique</li>
+      <li>Montage et démontage faisables par une seule personne</li>
+      <li>La ficelle tient la charge d'essai sans glisser ni casser</li>
+    </ul>
+  </details>
 </section>
 
 <section id="historique" class="alt">
@@ -249,19 +438,47 @@
     <li><b>Vérification du document choix_engin.pdf</b><span>Même analyse des trois conceptions que la version précédente.</span></li>
     <li><b>Changement de conception</b><span>La grue à flèche relevable avec treuil à manivelle remplace le portique à chariot.</span></li>
     <li><b>Mise à jour du site</b><span>Textes, schéma, comparatif, étapes suivantes et maquette 3D adaptés à la grue à flèche relevable.</span></li>
+<li><b>Plan de la boucle 2 ajouté</b><span>Fabrication de la maquette et documents définitifs (plans, instructions de montage, nomenclature, schéma cinématique).</span></li>
+      <li><b>Schéma du groupe reçu</b><span>Mât guidé par deux plaques, pivot central, bras avec charge d'un côté et contrepoids de l'autre.</span></li>
+    <li><b>Schéma cinématique refait et coté</b><span>Version maquette à l'échelle 1:10 avec treuil, cotes et liaisons numérotées.</span></li>
+    <li><b>Flèche de 15 cm à 25°</b><span>Dimensions de la flèche appliquées ; portée de 13,6 cm, écart de 30 cm signalé.</span></li>
+    <li><b>Fil de fer vers la base</b><span>Il remplace le contrepoids ; équilibrage recalculé (tension ≈ 1,1 fois la charge).</span></li>
+    <li><b>Boucle 2 rédigée</b><span>Dimensionnement, réduction des charges, instructions de montage, nomenclature, liaisons et essais ajoutés au Word et au site.</span></li>
   </ol>
 </section>
 
 <section id="suite">
   <h2>Suite du projet</h2>
   <ol class="steps">
-    <li>Dimensionner le mât et la flèche</li>
-    <li>Étudier la stabilité : moment de renversement, lestage ou ancrage de la base</li>
+    <li>Dimensionner le mât et le bras</li>
+    <li>Régler l'équilibrage : tension du fil de fer et lestage de la base</li>
     <li>Déterminer le rapport de réduction réalisable avec les engrenages fournis</li>
     <li>Concevoir le treuil, la manivelle et les poulies</li>
     <li>Réaliser un pivot rigide pour le mât</li>
     <li>Réaliser le schéma cinématique et les plans de la maquette à l'échelle 1:10</li>
   </ol>
+</section>
+
+<section id="bilan" class="alt">
+  <h2>Bilan du projet</h2>
+  <div class="grid two">
+    <div>
+      <h3>Positif</h3>
+      <ul>
+        <li><strong>Production :</strong> Schéma cinématique réalisé, Site web réalisé, Schéma réalisé</li>
+        <li><strong>Apprentissage :</strong> Type de grue qui existe, Torseur de cohésion, Critères à associer pour le choix de la grue</li>
+        <li><strong>Organisation :</strong> Bonne entente</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Négatif</h3>
+      <ul>
+        <li><strong>Production :</strong> Dimensionnement qui manque</li>
+        <li><strong>Apprentissage :</strong> Manque de recherche de solution</li>
+        <li><strong>Organisation :</strong> Manque de communication, Aucune structure dans le travail, Défaut de présentation et défaut d'accord pour la présentation</li>
+      </ul>
+    </div>
+  </div>
 </section>
 </main>
 
