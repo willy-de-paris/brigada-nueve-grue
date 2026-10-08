@@ -111,3 +111,14 @@ footer{background:var(--blue);color:#fff;text-align:center;padding:1.5rem;font-f
 
 .mini{max-width:420px}
 .panel figure{margin-top:1rem}
+
+/* Boucle 2 */
+.dl{display:inline-block;background:var(--blue);color:#fff;padding:.6rem 1.2rem;font-family:"Archivo",sans-serif;font-weight:600;text-decoration:none}
+.dl:hover{background:var(--card);color:var(--ink)}
+.acc{background:#fff;border:1px solid var(--line);border-left:5px solid var(--card);padding:0 1.2rem;margin:1rem auto}
+.acc summary{cursor:pointer;font:700 1.1rem "Archivo",Arial,sans-serif;color:var(--blue);padding:.9rem 0}
+.acc[open] summary{border-bottom:1px solid var(--line);margin-bottom:.8rem}
+.acc>*:last-child{margin-bottom:1rem}
+.check{list-style:none;padding-left:0}
+.check li{padding:.3rem 0 .3rem 1.8rem;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:.55rem;width:1rem;height:1rem;border:2px solid var(--blue)}

@@ -10,18 +10,19 @@ Site de présentation de notre projet de la **semaine d'intégration** : concevo
 - Matériel disponible pour la maquette
 - Analyse des trois conceptions : portique à chariot, grue à flèche relevable, chèvre à parallélogramme
 - Tableau comparatif
-- Solution retenue : **grue à flèche relevable avec treuil à manivelle**
+- Solution retenue : **grue pivotante à flèche inclinée, fil de fer vers la base et treuil à manivelle**
 - Maquette 3D interactive (rotation du mât, levage, démo animée)
+- Boucle 2 : dimensionnement, réduction des charges, instructions de montage, nomenclature, liaisons, essais
 - Calculateur d'effort
 - Suite du projet et historique des actions
 
 ## Solution retenue
 
-Un mât vertical pivotant porte une flèche articulée, maintenue par un vérin ou un tirant. Le levage se fait par un treuil à tambour avec manivelle démultipliée, et le mouvement horizontal par rotation du mât (rayon 3 m). La base est lestée ou ancrée.
+Un mât vertical pivotant, guidé par deux plaques et un pivot central, porte une flèche de 15 cm inclinée de 25° côté charge et un petit bras horizontal de 12 cm de l'autre côté. Un fil de fer relie le bout du petit bras à la base et équilibre le moment de la charge. Le levage se fait par un treuil à tambour avec manivelle démultipliée, et le mouvement horizontal par rotation du mât.
 
-Chaîne cinématique : manivelle → train d'engrenages → tambour → ficelle → poulie en bout de flèche → charge.
+Chaîne cinématique : manivelle → train d'engrenages → tambour → ficelle → poulie de renvoi → poulie en bout de flèche → charge.
 
-Point de vigilance : le moment de renversement, environ 300 × 9,81 × 3 ≈ 8 800 N·m pour la charge seule.
+Point d'attention : la portée de la maquette est de 15 × cos 25° ≈ 13,6 cm, pour 30 cm visés.
 
 ## Structure du dépôt
 
@@ -30,7 +31,8 @@ index.html        page principale
 style.css         mise en forme (responsive)
 script.js         menu mobile, onglets, calculateur
 crane3d.js        maquette 3D (Three.js)
-images/           schémas cinématiques et dimensionnement
+images/           schémas cinématiques (grue et portique) et dimensionnement
+Projet_grue_Brigada_Nueve.docx   document Word complet
 ```
 
 ## Technologies
