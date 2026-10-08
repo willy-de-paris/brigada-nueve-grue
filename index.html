@@ -444,6 +444,44 @@
       <li>La ficelle tient la charge d'essai sans glisser ni casser</li>
     </ul>
   </details>
+
+  <details class="acc" open>
+    <summary>6. Calculs détaillés</summary>
+    
+    <h4>1. Données de départ</h4>
+    <ul>
+      <li><strong>Hauteur du mât :</strong> 70 cm (40 cm de hauteur min + 20 cm de contenant)</li>
+      <li><strong>Poids en charge :</strong> P = mg = 3 × 9,81 = 29,43 N</li>
+      <li><strong>Dimension de la portée grâce au pivot :</strong> s = 30 cm = 0,30 m</li>
+      <li><strong>Objectif :</strong> éviter que la flèche casse ou se déforme → une flèche inclinée vers le haut est mécaniquement plus favorable</li>
+    </ul>
+
+    <h4>2. Engrenage et moment quadratique</h4>
+    <p><strong>Rapport d'engrenage :</strong> R = D₂/D₁ = N₂/N₁ (diamètre ou nombre de dents)</p>
+    <p><strong>Simplification (problème plan) :</strong> {liaison} = {R⃗, M⃗} avec R⃗ = (0, Vᵧ, 0) et M⃗ = (0, 0, Mz)</p>
+    <p><strong>Moments quadratiques des sections :</strong></p>
+    <ul>
+      <li>Section 1 : 2,45 × 10⁻⁴</li>
+      <li>Section 2 : 2,5 × 10⁻⁵</li>
+      <li>Section 3 : 1,7 × 10⁻⁴</li>
+    </ul>
+
+    <h4>3. Choix de l'angle et vérification de la portée</h4>
+    <p>Données : L = 15 cm, D = 40, θ = 25°</p>
+    <p><strong>Hauteur de la flèche :</strong> h = L cos(25°) = 15 cos(25°) = 13,56 cm</p>
+    <p><strong>Hauteur totale du mât :</strong> h = 70 + 13,56 cm → baisser la hauteur de base à 60 cm</p>
+    <p><strong>Projection horizontale :</strong> R = L sin(25°) ≈ 6,34 cm</p>
+    <p><strong>Angle de rotation pour 30 cm de portée :</strong> θ = s/R = 30/6,34 ≈ 4,73 rad ≈ 271°</p>
+    <p><strong>Moment au niveau de la charge :</strong> M = PR = 29,43 × 0,0634 = 1,87 N·m</p>
+    <p><strong>Contrepoids à l'équilibre :</strong> Mc = M/(g × D) = 1,87/(9,81 × 0,10) ≈ 1,91 kg</p>
+    <p class="note">M_renversement < M_stabilité</p>
+
+    <h4>4. Torseur de cohésion — vérification de résistance</h4>
+    <p>P = 29,43 N</p>
+    <p><strong>Axe de la flèche (effort normal) :</strong> N = P cos(25°) ≈ 26,67 N</p>
+    <p><strong>Axe perpendiculaire (effort tranchant) :</strong> T = P sin(25°) ≈ 12,44 N</p>
+    <p><strong>Moment fléchissant maximal :</strong> Mmax = T × L = 12,44 × 0,15 = 1,87 N·m</p>
+  </details>
 </section>
 
 <section id="historique" class="alt">
