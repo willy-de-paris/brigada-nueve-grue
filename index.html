@@ -15,7 +15,6 @@
   <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
   <nav id="menu">
     <a href="#projet">Projet</a>
-    <a href="#boucle1">Boucle 1</a>
     <a href="#materiel">Matériel</a>
     <a href="#conceptions">Conceptions</a>
     <a href="#comparatif">Comparatif</a>
@@ -25,7 +24,6 @@
     <a href="#suite">Suite</a>
     <a href="#boucle2">Boucle 2</a>
     <a href="#historique">Historique</a>
-    <a href="#bilan">Bilan</a>
   </nav>
 </header>
 
@@ -38,10 +36,10 @@
     <div class="stats">
       <div><b>300 kg</b><span>charge</span></div>
       <div><b>4 m → 40 cm</b><span>levage</span></div>
-      <div><b>3 m → 30 cm</b><span>portée visée (maquette : 13,6 cm)</span></div>
+      <div><b>3 m → 30 cm</b><span>portée visée (maquette : 22,7 cm)</span></div>
     </div>
   </div>
-  <img src="images/schema-grue-contrepoids.png" alt="Schéma cinématique de la grue pivotante à bras horizontal, contrepoids et treuil à manivelle">
+  <img src="images/image (4).jpg" alt="Schéma cinématique de la grue pivotante avec palan dans le mât et contrepoids">
 </section>
 
 <section id="projet">
@@ -121,32 +119,6 @@
   <p class="note">Le plan d'action a été fait sur 3 jours, alors qu'il fallait le faire sur une journée par boucle.</p>
 </section>
 
-<section id="boucle1" class="alt">
-  <h2>Boucle 1 : Conception</h2>
-  <p><strong>Objectif :</strong> Définir le cadre, concevoir le système, réaliser le schéma cinématique et la note de calcul.</p>
-  
-  <h3>Livrables (à rendre mercredi)</h3>
-  <ul>
-    <li>Conception du système et sa traduction en maquette</li>
-    <li>Choix de l'engin de levage</li>
-    <li>Schéma cinématique</li>
-    <li>Dimensionnement (note de calcul)</li>
-  </ul>
-
-  <h3>Plan d'action Boucle 1</h3>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Étape</th><th>Durée</th><th>Qui</th></tr></thead>
-      <tbody>
-        <tr><td>Intervention de l'expert de mécanique</td><td>2 h</td><td>Groupe</td></tr>
-        <tr><td>Analyse de la fiche IA</td><td>15 min</td><td>Autonomie</td></tr>
-        <tr><td>Discussion sur la conception la plus adaptée, menant au choix</td><td>30 min</td><td>Groupe</td></tr>
-        <tr><td>Réalisation du schéma cinématique</td><td>1 h</td><td>Groupe</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
 <section id="materiel" class="alt">
   <h2>Matériel disponible</h2>
   <div class="grid cards">
@@ -168,13 +140,13 @@
   <div class="panel" id="c1" hidden>
     <p><strong>Principe :</strong> structure en portique (type A ou H) avec une poutre horizontale sur laquelle circule un chariot porte-palan. Les deux mouvements, vertical et horizontal, sont clairement séparés.</p>
     <p><strong>Avec notre matériel :</strong> le carton fait les montants et la poutre, les plaques renforcent les zones sous charge, les pics et le fil de fer servent d'axes. Sans palan à chaîne, on réalise un treuil manuel démultiplié.</p>
-    
+   
   </div>
   <div class="panel" id="c2">
-    <p><strong>Principe :</strong> un mât vertical pivotant porte une flèche. Le levage se fait par un treuil à tambour avec manivelle démultipliée, et le mouvement horizontal par rotation du mât.</p>
-    <p><strong>Version retenue :</strong> flèche de 15 cm inclinée de 25° côté charge, petit bras horizontal de 12 cm de l'autre côté, et un fil de fer qui relie le bout du petit bras à la base. Le mât tourne dans deux plaques de guidage (appuis plans) et un pivot central.</p>
-    <p><strong>Limite :</strong> la stabilité et le pivot. Le fil de fer équilibre le moment de la charge, mais le pivot rigide et la base en carton sont délicats à réaliser.</p>
-<div class="grid two">
+    <p><strong>Principe :</strong> un mât vertical pivotant porte une flèche. Le mouvement horizontal se fait par rotation du mât.</p>
+    <p><strong>Version retenue :</strong> flèche de 25 cm inclinée de 25° sous l'horizontale, fixée au sommet d'un mât en caisson de carton. Le mât contient un palan à poulies : le câble, tiré à la main, passe sur les poulies du mât, monte sur la flèche et descend à la charge. Un contrepoids est fixé sur le mât, côté opposé à la flèche. Le mât tourne dans deux plaques de guidage (appuis plans) et un pivot central.</p>
+    <p><strong>Limite :</strong> la stabilité, le pivot et la réduction, limitée par le nombre de poulies.</p>
+ <div class="grid two">
       <figure class="mini"><img src="images/schema.png" alt="Schéma cinématique du portique à chariot"><figcaption>Schéma de la conception 1.</figcaption></figure>
       <figure class="mini"><img src="images/dimensionnement.png" alt="Dimensionnement du portique"><figcaption>Dimensionnement de la conception 1.</figcaption></figure>
     </div>  </div>
@@ -203,7 +175,7 @@
       </tbody>
     </table>
   </div>
-  <p class="note">Ce tableau reprend l'analyse du document d'étude initial. Le groupe a retenu la grue pivotante (conception 2), avec une flèche inclinée et un fil de fer vers la base ; ses points faibles (stabilité, pivot) sont traités dans la section suivante.</p>
+  <p class="note">Ce tableau reprend l'analyse du document d'étude initial. Le groupe a retenu la grue pivotante (conception 2), avec une flèche inclinée, un palan dans le mât et un contrepoids ; ses points faibles (stabilité, pivot) sont traités dans la section suivante.</p>
 </section>
 
 <section id="choix">
@@ -211,35 +183,35 @@
   <!-- À compléter par le groupe : justification détaillée du changement de choix (portique -> grue). -->
   <div class="grid two">
     <div>
-      <p>Nous avons retenu la <strong>grue pivotante avec treuil à manivelle</strong> (conception 2) : un mât vertical pivotant porte une flèche de 15 cm inclinée de 25°, et un fil de fer relie l'autre extrémité du bras à la base.</p>
+      <p>Nous avons retenu la <strong>grue pivotante</strong> (conception 2) : un mât en caisson de carton, qui tourne, porte une flèche de 25 cm inclinée de 25° sous l'horizontale. Le mât contient un <strong>palan à poulies</strong> : le câble, tiré à la main, passe sur les poulies, monte sur la flèche et descend à la charge.</p>
       <ul>
-        <li>Le <strong>levage</strong> (4 m, soit 40 cm sur la maquette) est assuré par un treuil à tambour avec manivelle démultipliée.</li>
+        <li>Le <strong>levage</strong> (4 m, soit 40 cm sur la maquette) vient de la traction du câble : les poulies réduisent l'effort.</li>
         <li>Le <strong>mouvement horizontal</strong> se fait par rotation du mât.</li>
-        <li>Le mât est guidé par deux plaques avec appuis plans et par un pivot central.</li>
-        <li>Le <strong>fil de fer</strong> vers la base équilibre le moment de la charge, sans ajouter de masse.</li>
-        <li>Cinématique simple, avec les engrenages, poulies, ficelle et axes fournis.</li>
+        <li>Le mât est guidé par deux plaques avec appuis plans et butées, et par un pivot central.</li>
+        <li>Un <strong>contrepoids</strong> fixé sur le mât, côté opposé à la flèche, équilibre la charge.</li>
+        <li>Pas de treuil à fabriquer : des poulies, une ficelle et des axes suffisent.</li>
       </ul>
     </div>
     <div class="panel">
       <h3 style="margin-top:0">Points de vigilance</h3>
       <ul>
-        <li><strong>Portée :</strong> une flèche de 15 cm à 25° donne 15 × cos 25° ≈ 13,6 cm, au lieu des 30 cm visés. Pour atteindre 30 cm, la flèche devrait mesurer environ 33 cm.</li>
-        <li><strong>Moment de la charge :</strong> 300 kg à 3 m du mât donnent environ 300 × 9,81 × 3 ≈ 8 800 N·m (charge seule).</li>
-        <li><strong>Fil de fer :</strong> tension d'environ 1,1 fois la charge ; du fil de fer, pas de la ficelle.</li>
-        <li><strong>Maquette :</strong> pivot rigide et plaques de guidage à renforcer.</li>
+        <li><strong>Portée :</strong> une flèche de 25 cm à 25° donne 25 × cos 25° ≈ 22,7 cm, au lieu des 30 cm visés. Pour 30 cm, la flèche devrait mesurer environ 33 cm.</li>
+        <li><strong>Réduction :</strong> avec des poulies seules, le rapport est de 1/n (n brins), bien en dessous du 1/60 initial.</li>
+        <li><strong>Contrepoids :</strong> environ 5,4 fois la charge s'il est collé sur le mât.</li>
+        <li><strong>Pivot :</strong> plaques et pied du mât à renforcer.</li>
       </ul>
     </div>
   </div>
   <h3>Chaîne cinématique de la maquette</h3>
   <ol class="chain">
-    <li>Manivelle</li><li>Train d'engrenages</li><li>Tambour</li><li>Ficelle</li><li>Poulie en bout de flèche</li><li>Charge</li>
+    <li>Traction à la main</li><li>Câble</li><li>Palan de poulies</li><li>Poulie de renvoi</li><li>Poulie de bout de flèche</li><li>Charge</li>
   </ol>
   <p class="note">Le déplacement horizontal est obtenu séparément, par la rotation du mât.</p>
 </section>
 
 <section id="maquette3d">
   <h2>Maquette 3D interactive</h2>
-  <p>Fais glisser pour tourner autour de la grue (le fil de fer relie le petit bras à la base). Les curseurs commandent la rotation du mât (flèche de 15 cm inclinée de 25°, soit une portée d'environ 13,6 cm sur la maquette) et le levage (4 m, soit 40 cm).</p>
+  <p>Fais glisser pour tourner autour de la grue. Le palan est dans le mât (transparent), le contrepoids de l'autre côté de la flèche. Les curseurs commandent la rotation du mât (flèche de 25 cm inclinée de 25°, soit une portée d'environ 22,7 cm sur la maquette) et le levage (4 m, soit 40 cm).</p>
   <div id="crane3d" aria-label="Grue pivotante 3D interactive"></div>
   <div class="ctrl">
     <label>Rotation du mât : <output id="oT">0°</output><input id="sT" type="range" min="0" max="1" step="0.001" value="0"></label>
@@ -250,7 +222,7 @@
 
 <section id="calcul" class="alt">
   <h2>Calcul d'effort</h2>
-  <p>Effort = masse × 9,81 ÷ rapport de réduction. À titre d'exemple, un rapport de 1/60 avec 300 kg donne environ 49 N (5 kg). Modifie les valeurs pour tester.</p>
+  <p>Effort = masse × 9,81 ÷ rapport de réduction. À titre d'exemple, un rapport de 1/60 avec 300 kg donne environ 49 N (5 kg). Pour un palan, le rapport vaut le nombre de brins n (par exemple 6). Modifie les valeurs pour tester.</p>
   <form class="calc" onsubmit="return false">
     <label>Masse (kg)<input id="mass" type="number" value="300" min="0" step="any"></label>
     <label>Rapport de réduction (1/N)<input id="ratio" type="number" value="60" min="1" step="any"></label>
@@ -290,27 +262,24 @@
       </tbody>
     </table>
   </div>
-  <p class="note">Les valeurs chiffrées ci-dessous sont des propositions de départ, à confirmer avec les mesures réelles du matériel.</p>
+  <p class="note">Les valeurs chiffrées ci-dessous sont des propositions de départ, à confirmer avec les mesures réelles du matériel. La position exacte du contrepoids et de la sortie du câble n'est pas dessinée : à préciser.</p>
 
   <h3>Schéma cinématique de la maquette</h3>
   <figure>
-    <img src="images/schema-grue-contrepoids.png" alt="Schéma cinématique coté de la grue pivotante avec fil de fer et treuil à manivelle">
-    <figcaption>Échelle 1:10 : flèche de 15 cm inclinée de 25°, mât de 62 cm, levage de 40 cm.</figcaption>
+    <img src="images/schema-grue-contrepoids.png" alt="Schéma cinématique coté de la grue pivotante avec palan dans le mât et contrepoids">
+    <figcaption>Échelle 1:10 d'après le schéma officiel : flèche de 25 cm inclinée de 25°, mât de 60 cm, levage de 40 cm.</figcaption>
   </figure>
   <div class="table-wrap">
     <table>
       <thead><tr><th>Rep.</th><th>Liaison</th><th>Rôle</th></tr></thead>
       <tbody>
         <tr><td>1</td><td>Pivot central, mât / bâti</td><td>Rotation du mât autour de l'axe vertical</td></tr>
-        <tr><td>2</td><td>Appui plan et butée, plaque haute</td><td>Guide le mât et reprend son poids</td></tr>
-        <tr><td>3</td><td>Appui plan et butée, plaque basse</td><td>Guide le mât en pied</td></tr>
-        <tr><td>4</td><td>Poulie de renvoi, en haut du mât</td><td>Guidage de la ficelle vers la flèche</td></tr>
-        <tr><td>5</td><td>Poulie en bout de flèche</td><td>Renvoi de la ficelle vers la charge</td></tr>
-        <tr><td>6</td><td>Tambour sur la plaque du treuil</td><td>Enroulement de la ficelle : levage</td></tr>
-        <tr><td>7</td><td>Pignon et manivelle</td><td>Entrée de l'effort humain</td></tr>
-        <tr><td>8</td><td>Engrènement pignon / roue</td><td>Réduction de l'effort</td></tr>
-        <tr><td>9</td><td>Attache du fil de fer sur le petit bras</td><td>Reprend le moment de la charge</td></tr>
-        <tr><td>10</td><td>Ancrage du fil de fer sur la base</td><td>Ferme la boucle d'efforts dans la structure</td></tr>
+        <tr><td>2</td><td>Appui plan et butée, plaque haute</td><td>Guide le mât en partie haute</td></tr>
+        <tr><td>3</td><td>Appui plan et butée, plaque basse</td><td>Guide le mât en pied et reprend son poids</td></tr>
+        <tr><td>4</td><td>Poulie de renvoi, sur la flèche près du mât</td><td>Guidage du câble vers la flèche</td></tr>
+        <tr><td>5</td><td>Poulie de bout de flèche</td><td>Renvoi du câble vers la charge</td></tr>
+        <tr><td>6</td><td>Poulies du palan, dans le mât</td><td>Réduction de l'effort de traction</td></tr>
+        <tr><td>7</td><td>Fixation du contrepoids sur le mât</td><td>Équilibre le moment de la charge</td></tr>
       </tbody>
     </table>
   </div>
@@ -322,82 +291,77 @@
         <thead><tr><th>Élément</th><th>Réel</th><th>Maquette</th><th>Remarque</th></tr></thead>
         <tbody>
           <tr><td>Levage</td><td>4 m</td><td>40 cm</td><td>Imposé</td></tr>
-          <tr><td>Portée horizontale (axe du mât à la charge)</td><td>≈ 1,36 m</td><td>≈ 13,6 cm</td><td>Cahier des charges : 30 cm</td></tr>
-          <tr><td>Hauteur du mât</td><td>6,2 m</td><td>62 cm</td><td>Carton roulé ou multicouche</td></tr>
-          <tr><td>Flèche côté charge</td><td>1,5 m</td><td>15 cm</td><td>Inclinée de 25° (hauteur gagnée ≈ 6,3 cm)</td></tr>
-          <tr><td>Petit bras (attache du fil de fer)</td><td>≈ 1,2 m</td><td>≈ 12 cm</td><td>Horizontal, côté opposé</td></tr>
-          <tr><td>Base lestée</td><td>3 × 3 m</td><td>30 × 30 cm</td><td>Porte les deux plaques de guidage</td></tr>
+          <tr><td>Portée horizontale (axe du mât à la charge)</td><td>≈ 2,27 m</td><td>≈ 22,7 cm</td><td>Cahier des charges : 30 cm</td></tr>
+          <tr><td>Flèche</td><td>2,5 m</td><td>25 cm</td><td>Inclinée de 25° sous l'horizontale</td></tr>
+          <tr><td>Baisse du bout de flèche</td><td>≈ 1,06 m</td><td>≈ 10,6 cm</td><td>25 × sin 25°</td></tr>
+          <tr><td>Hauteur du mât</td><td>6 m</td><td>60 cm</td><td>Bout de flèche à ≈ 49 cm : laisse 40 cm de levage</td></tr>
+          <tr><td>Section du mât (caisson)</td><td>≈ 54 cm</td><td>≈ 5,4 cm</td><td>Carton, renforcé</td></tr>
+          <tr><td>Base</td><td>3 × 3 m</td><td>30 × 30 cm</td><td>Porte les deux plaques de guidage</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="note">Écart : avec une flèche de 15 cm à 25°, la portée est de 15 × cos 25° ≈ 13,6 cm, pas 30 cm. Pour 30 cm, il faudrait une flèche d'environ 33 cm (30 ÷ cos 25°). Au groupe de trancher.</p>
+    <p class="note">Écart : avec une flèche de 25 cm à 25°, la portée est de 25 × cos 25° ≈ 22,7 cm, pas 30 cm. Pour 30 cm, il faudrait une flèche d'environ 33 cm (30 ÷ cos 25°). Au groupe de trancher.</p>
     <h3>Charge d'essai et ficelle</h3>
     <ul>
-      <li>Coton : 1 kg ; jute : 2 kg. Avec un facteur de sécurité de 2, la charge d'essai proposée est de 1 kg avec la jute.</li>
-      <li>Avec un mouflage à 2 brins, chaque brin porte 0,5 kg pour 1 kg de charge : le coton reste utilisable.</li>
-      <li>La charge d'essai finale est à valider avec les encadrants.</li>
+      <li>Charge d'essai proposée : 0,5 kg, jusqu'à 1 kg, à valider avec les encadrants.</li>
+      <li>Pour le câble, utiliser la ficelle de jute (2 kg). Les frottements augmentent la tension : à vérifier à la balance.</li>
     </ul>
-    <h3>Équilibrage par le fil de fer</h3>
-    <p>Le fil relie le bout du petit bras à la base et équilibre le moment de la charge autour de l'axe du mât : <strong>tension × 12 cm = charge × 13,6 cm</strong>.</p>
+    <h3>Équilibrage par le contrepoids</h3>
+    <p>Le contrepoids est collé sur le côté du mât opposé à la flèche, son centre à environ 4,2 cm de l'axe (demi-mât de 2,7 cm + demi-contrepoids de 1,5 cm) : <strong>masse du contrepoids × 4,2 cm = masse de la charge × 22,7 cm</strong>.</p>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Charge d'essai</th><th>Tension du fil</th><th>Calcul</th></tr></thead>
+        <thead><tr><th>Charge d'essai</th><th>Contrepoids nécessaire</th><th>Calcul</th></tr></thead>
         <tbody>
-          <tr><td>0,5 kg</td><td>≈ 0,57 kg</td><td>0,5 × 13,6 ÷ 12</td></tr>
-          <tr><td>1 kg</td><td>≈ 1,13 kg</td><td>1 × 13,6 ÷ 12</td></tr>
-          <tr><td>2 kg</td><td>≈ 2,27 kg</td><td>2 × 13,6 ÷ 12</td></tr>
+          <tr><td>0,5 kg</td><td>≈ 2,7 kg</td><td>0,5 × 22,7 ÷ 4,2</td></tr>
+          <tr><td>1 kg</td><td>≈ 5,4 kg</td><td>1 × 22,7 ÷ 4,2</td></tr>
+          <tr><td>2 kg</td><td>≈ 10,8 kg</td><td>2 × 22,7 ÷ 4,2</td></tr>
         </tbody>
       </table>
     </div>
     <ul>
-      <li><strong>Fixation :</strong> le fil descend presque à la verticale du bout du petit bras jusqu'à la base, hors des plaques. Accroché au milieu de l'arc de rotation, il varie de moins de 0,5 cm de longueur. Un petit élastique absorbe cette variation.</li>
-      <li><strong>Matériau :</strong> du fil de fer, car la tension est trop proche de la limite de la jute (2 kg).</li>
-      <li><strong>Pivot :</strong> il reprend la charge et la tension du fil (environ 2,1 kg pour 1 kg de charge) : plaques et pied du mât à renforcer.</li>
-      <li><strong>Stabilité :</strong> la charge reste au-dessus de la base (13,6 cm &lt; 15 cm). Avec une flèche de 33 cm, il faudrait lester la base d'au moins 1,5 kg ou l'élargir.</li>
-      <li>Ne jamais lever la charge sans le fil de fer tendu.</li>
+      <li><strong>Masse élevée :</strong> sur un petit bras arrière de 12 cm, il ne faudrait que 1,9 fois la charge (0,9 kg pour 0,5 kg ; 1,9 kg pour 1 kg).</li>
+      <li><strong>Pivot :</strong> il reprend la charge et le contrepoids (environ 6,4 kg pour 1 kg de charge) : plaques et pied du mât à renforcer.</li>
+      <li>Ne jamais lever la charge sans le contrepoids en place.</li>
     </ul>
   </details>
 
   <details class="acc">
     <summary>2. Système de levage et réduction des charges</summary>
-    <p><strong>Chaîne :</strong> manivelle → train d'engrenages → tambour → ficelle → poulie de renvoi → poulie en bout de flèche → charge.</p>
-    <p><strong>Rapport total = rapport des engrenages × (longueur de la manivelle ÷ rayon du tambour) × nombre de brins.</strong> Effort théorique : F = m × 9,81 ÷ rapport total. Objectif : un rapport de 60 (principe de la conception initiale, 1/60).</p>
-    <h3>Exemple (valeurs à remplacer par les mesures)</h3>
+    <p><strong>Chaîne :</strong> traction à la main → câble → palan de poulies dans le mât → poulie de renvoi → poulie de bout de flèche → charge.</p>
+    <p>Dans un palan à n brins, l'effort théorique est divisé par n et la longueur de câble à tirer est multipliée par n : <strong>F = m × 9,81 ÷ n</strong> et <strong>longueur = 40 cm × n</strong>.</p>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Paramètre</th><th>Valeur d'exemple</th><th>Rapport apporté</th></tr></thead>
+        <thead><tr><th>Brins n</th><th>Effort théorique (1 kg)</th><th>Câble à tirer pour 40 cm</th></tr></thead>
         <tbody>
-          <tr><td>Longueur de la manivelle</td><td>6 cm</td><td>6 (tambour de rayon 1 cm)</td></tr>
-          <tr><td>Tambour</td><td>Ø 2 cm</td><td></td></tr>
-          <tr><td>Nombre de brins (mouflage)</td><td>2</td><td>2</td></tr>
-          <tr><td>Train d'engrenages nécessaire</td><td>5 (60 ÷ 12)</td><td>5</td></tr>
-          <tr><td>Rapport total visé</td><td></td><td>60</td></tr>
+          <tr><td>4</td><td>≈ 2,5 N</td><td>1,6 m</td></tr>
+          <tr><td>6 (schéma)</td><td>≈ 1,6 N</td><td>2,4 m</td></tr>
+          <tr><td>8</td><td>≈ 1,2 N</td><td>3,2 m</td></tr>
         </tbody>
       </table>
     </div>
     <ul>
-      <li>Effort théorique pour 1 kg : 9,81 ÷ 60 ≈ 0,16 N. Les frottements seront bien plus grands : l'effort réel sera mesuré à la balance suspendue.</li>
-      <li>Ficelle à enrouler pour 40 cm de levage : 0,40 m × 2 brins = 0,80 m.</li>
-      <li>Tours du tambour : 80 cm ÷ (π × 2 cm) ≈ 12,7. Tours de manivelle : 12,7 × 5 ≈ 64.</li>
+      <li>Les frottements des poulies en carton peuvent doubler l'effort : à mesurer avec la balance suspendue.</li>
+      <li>Le rapport obtenu (1/6) est bien inférieur au 1/60 initial : avec 300 kg réels, l'effort serait d'environ 490 N.</li>
+      <li>Les engrenages fournis ne sont pas utilisés dans cette version.</li>
     </ul>
-    <p class="note">À relever : nombre de dents des trois engrenages, diamètre utile du tambour, longueur de la manivelle, masse de la charge, tension du fil de fer.</p>
+    <p class="note">À relever : nombre de poulies utilisables et leur diamètre, nombre de brins, masse de la charge, masse du contrepoids, effort mesuré.</p>
   </details>
 
   <details class="acc">
     <summary>3. Instructions de montage</summary>
     <ol>
       <li>Découper dans le carton la base de 30 × 30 cm en deux épaisseurs collées, et y fixer le lest.</li>
-      <li>Fabriquer le mât de 62 cm en carton roulé ou multicouche. Coller deux butées (bagues en carton) à hauteur des deux supports.</li>
-      <li>Réaliser les deux supports de guidage : une plaque percée au centre (jeu juste suffisant) avec un appui plan sous la butée. Les fixer à la base, en haut et en bas du mât (cadre ou montants à préciser).</li>
-      <li>Monter le pivot central : un manchon en carton autour du mât, entre les deux supports.</li>
-      <li>Fixer le bras en haut du mât, à 62 cm du sol : côté charge, une flèche de 15 cm inclinée de 25° (gabarit en carton) ; côté opposé, un petit bras horizontal d'environ 12 cm.</li>
-      <li>Fixer le fil de fer au bout du petit bras, le tendre presque verticalement jusqu'à la base et l'accrocher au milieu de l'arc de rotation (avec un petit élastique).</li>
-      <li>Fixer sur le mât, côté charge, une plaque rigide 9 × 12 cm qui porte le treuil : tambour, engrenages sur axes en pics à brochette, manivelle en fil de fer.</li>
-      <li>Installer la poulie de renvoi en haut du mât et la poulie en bout de flèche (à environ 13,6 cm de l'axe).</li>
-      <li>Fixer la ficelle de jute sur le tambour, la faire passer sur les deux poulies, puis l'accrocher à la charge.</li>
-      <li>Régler la tension du fil de fer, vérifier la rotation du mât et l'enroulement de la ficelle, puis faire un premier essai à vide.</li>
+      <li>Monter l'embase basse : un bloc de carton sur la base, avec la plaque basse percée, l'appui plan et la butée. Y fixer l'axe du pivot, bien vertical.</li>
+      <li>Monter le pivot central : un manchon en carton autour de l'axe, qui guide la rotation sans freiner.</li>
+      <li>Fabriquer le mât : un caisson de carton de 5,4 cm de côté, renforcé par une plaque rigide 9 × 12 cm, fixé sur l'axe. Son sommet est à 60 cm du sol.</li>
+      <li>Placer la plaque haute percée avec son appui plan et sa butée autour du mât, et la fixer à la base par un cadre ou des montants (à préciser).</li>
+      <li>Monter le palan dans le mât : 6 poulies sur deux rangées d'axes en pics à brochette (à confirmer avec les poulies disponibles).</li>
+      <li>Fixer la flèche de 25 cm au sommet du mât, inclinée de 25° vers le bas (gabarit en carton), avec la poulie de renvoi près du mât et la poulie de bout.</li>
+      <li>Fixer le contrepoids sur le côté du mât opposé à la flèche, de façon à pouvoir ajouter des poids.</li>
+      <li>Passer le câble de jute : accrocher la charge, passer sur la poulie de bout puis sur la poulie de renvoi, zigzaguer dans le palan, et sortir au bas du mât avec une poignée.</li>
+      <li>Régler le contrepoids, vérifier la rotation du mât et le coulissement du câble, puis faire un premier essai à vide.</li>
     </ol>
-    <p><strong>Démontage :</strong> retirer la charge, la ficelle et le fil de fer, détacher le bras du mât, puis sortir le mât des deux supports. Le treuil reste sur sa plaque.</p>
+    <p><strong>Démontage :</strong> retirer la charge et le câble, décrocher le contrepoids, détacher la flèche, puis sortir le mât de l'axe et des plaques.</p>
   </details>
 
   <details class="acc">
@@ -408,24 +372,24 @@
         <tbody>
           <tr><td>1</td><td>Base 30 × 30 cm</td><td>1</td><td>Carton, 2 épaisseurs collées</td></tr>
           <tr><td>2</td><td>Lest de la base</td><td>1 kg env.</td><td>Poids de référence, à ajuster</td></tr>
-          <tr><td>3</td><td>Mât (62 cm)</td><td>1</td><td>Carton roulé ou multicouche</td></tr>
-          <tr><td>4</td><td>Plaques de guidage</td><td>2</td><td>Carton rigide ou plaques 9 × 12 cm, percées</td></tr>
-          <tr><td>5</td><td>Appuis plans et butées du mât</td><td>2</td><td>Carton collé ; bague sur le mât</td></tr>
-          <tr><td>6</td><td>Manchon du pivot central</td><td>1</td><td>Carton</td></tr>
-          <tr><td>7</td><td>Bras : flèche de 15 cm à 25° et petit bras de 12 cm</td><td>1</td><td>Carton renforcé</td></tr>
-          <tr><td>8</td><td>Fil de fer de rappel</td><td>≈ 65 cm</td><td>Du petit bras à la base, avec un petit élastique</td></tr>
-          <tr><td>9</td><td>Plaque rigide du treuil</td><td>1</td><td>Plaque 9 × 12 cm fixée au mât</td></tr>
-          <tr><td>10</td><td>Tambour</td><td>1</td><td>À définir (Ø 2 cm proposé)</td></tr>
-          <tr><td>11</td><td>Engrenages du train de réduction</td><td>2 à 3</td><td>Fournis, à compter après relevé</td></tr>
-          <tr><td>12</td><td>Axes du treuil</td><td>3</td><td>Pics à brochette</td></tr>
-          <tr><td>13</td><td>Manivelle (≈ 6 cm)</td><td>1</td><td>Fil de fer et carton</td></tr>
-          <tr><td>14</td><td>Poulie de renvoi et poulie de bout de flèche</td><td>2</td><td>Poulies fournies</td></tr>
-          <tr><td>15</td><td>Poulie mobile (mouflage)</td><td>1</td><td>Optionnelle</td></tr>
-          <tr><td>16</td><td>Ficelle de jute Ø 2,5 mm</td><td>≈ 1,5 m</td><td>Résiste à 2 kg</td></tr>
-          <tr><td>17</td><td>Charge d'essai</td><td>1 kg</td><td>Poids de référence</td></tr>
+          <tr><td>3</td><td>Embase basse (bloc carton)</td><td>1</td><td>Carton</td></tr>
+          <tr><td>4</td><td>Axe du pivot</td><td>1</td><td>Pic à brochette ou boulon avec écrou</td></tr>
+          <tr><td>5</td><td>Manchon du pivot central</td><td>1</td><td>Carton</td></tr>
+          <tr><td>6</td><td>Plaques de guidage (haute et basse)</td><td>2</td><td>Carton rigide ou plaques 9 × 12 cm, percées</td></tr>
+          <tr><td>7</td><td>Appuis plans et butées</td><td>2</td><td>Carton collé ; bague sur le mât</td></tr>
+          <tr><td>8</td><td>Mât en caisson (60 cm)</td><td>1</td><td>Carton, section 5,4 cm</td></tr>
+          <tr><td>9</td><td>Plaque de renfort du mât</td><td>1</td><td>Plaque 9 × 12 cm</td></tr>
+          <tr><td>10</td><td>Poulies du palan</td><td>6</td><td>Poulies fournies, à confirmer</td></tr>
+          <tr><td>11</td><td>Axes des poulies</td><td>6 à 8</td><td>Pics à brochette</td></tr>
+          <tr><td>12</td><td>Flèche (25 cm)</td><td>1</td><td>Carton renforcé, inclinée de 25°</td></tr>
+          <tr><td>13</td><td>Poulie de renvoi et poulie de bout de flèche</td><td>2</td><td>Poulies fournies</td></tr>
+          <tr><td>14</td><td>Contrepoids</td><td>≈ 2,7 à 5,4 kg</td><td>Poids de référence, fixé sur le mât</td></tr>
+          <tr><td>15</td><td>Câble : ficelle de jute Ø 2,5 mm</td><td>≈ 4 m</td><td>Résiste à 2 kg</td></tr>
+          <tr><td>16</td><td>Poignée de traction</td><td>1</td><td>Anneau en fil de fer</td></tr>
+          <tr><td>17</td><td>Charge d'essai</td><td>0,5 à 1 kg</td><td>Poids de référence</td></tr>
           <tr><td>18</td><td>Boulons avec écrous</td><td>2 à 4</td><td>Selon les assemblages</td></tr>
           <tr><td>19</td><td>Colle chaude</td><td>—</td><td>Assemblages</td></tr>
-          <tr><td>20</td><td>Balance suspendue</td><td>1</td><td>Mesure de l'effort à la manivelle</td></tr>
+          <tr><td>20</td><td>Balance suspendue</td><td>1</td><td>Mesure de l'effort de traction</td></tr>
         </tbody>
       </table>
     </div>
@@ -436,51 +400,12 @@
     <summary>5. Essais et vérification</summary>
     <ul class="check">
       <li>Levage de 40 cm obtenu</li>
-      <li>Rotation du mât : arc de 13,6 cm (environ 57°) sans blocage</li>
-      <li>La maquette ne bascule pas avec la charge d'essai à pleine portée et le fil de fer tendu</li>
-      <li>Le fil de fer ne gêne pas la rotation du mât</li>
-      <li>Effort mesuré à la manivelle avec la balance suspendue, puis comparé à l'effort théorique</li>
+      <li>Rotation du mât : arc d'environ 22,7 cm (57°) sans blocage</li>
+      <li>La maquette ne bascule pas avec la charge d'essai à pleine portée et le contrepoids en place</li>
+      <li>Effort de traction mesuré avec la balance suspendue, puis comparé à l'effort théorique</li>
       <li>Montage et démontage faisables par une seule personne</li>
-      <li>La ficelle tient la charge d'essai sans glisser ni casser</li>
+      <li>Le câble tient la charge d'essai sans glisser ni casser</li>
     </ul>
-  </details>
-
-  <details class="acc" open>
-    <summary>6. Calculs détaillés</summary>
-    
-    <h4>1. Données de départ</h4>
-    <ul>
-      <li><strong>Hauteur du mât :</strong> 70 cm (40 cm de hauteur min + 20 cm de contenant)</li>
-      <li><strong>Poids en charge :</strong> P = mg = 3 × 9,81 = 29,43 N</li>
-      <li><strong>Dimension de la portée grâce au pivot :</strong> s = 30 cm = 0,30 m</li>
-      <li><strong>Objectif :</strong> éviter que la flèche casse ou se déforme → une flèche inclinée vers le haut est mécaniquement plus favorable</li>
-    </ul>
-
-    <h4>2. Engrenage et moment quadratique</h4>
-    <p><strong>Rapport d'engrenage :</strong> R = D₂/D₁ = N₂/N₁ (diamètre ou nombre de dents)</p>
-    <p><strong>Simplification (problème plan) :</strong> {liaison} = {R⃗, M⃗} avec R⃗ = (0, Vᵧ, 0) et M⃗ = (0, 0, Mz)</p>
-    <p><strong>Moments quadratiques des sections :</strong></p>
-    <ul>
-      <li>Section 1 : 2,45 × 10⁻⁴</li>
-      <li>Section 2 : 2,5 × 10⁻⁵</li>
-      <li>Section 3 : 1,7 × 10⁻⁴</li>
-    </ul>
-
-    <h4>3. Choix de l'angle et vérification de la portée</h4>
-    <p>Données : L = 15 cm, D = 40, θ = 25°</p>
-    <p><strong>Hauteur de la flèche :</strong> h = L cos(25°) = 15 cos(25°) = 13,56 cm</p>
-    <p><strong>Hauteur totale du mât :</strong> h = 70 + 13,56 cm → baisser la hauteur de base à 60 cm</p>
-    <p><strong>Projection horizontale :</strong> R = L sin(25°) ≈ 6,34 cm</p>
-    <p><strong>Angle de rotation pour 30 cm de portée :</strong> θ = s/R = 30/6,34 ≈ 4,73 rad ≈ 271°</p>
-    <p><strong>Moment au niveau de la charge :</strong> M = PR = 29,43 × 0,0634 = 1,87 N·m</p>
-    <p><strong>Contrepoids à l'équilibre :</strong> Mc = M/(g × D) = 1,87/(9,81 × 0,10) ≈ 1,91 kg</p>
-    <p class="note">M_renversement < M_stabilité</p>
-
-    <h4>4. Torseur de cohésion — vérification de résistance</h4>
-    <p>P = 29,43 N</p>
-    <p><strong>Axe de la flèche (effort normal) :</strong> N = P cos(25°) ≈ 26,67 N</p>
-    <p><strong>Axe perpendiculaire (effort tranchant) :</strong> T = P sin(25°) ≈ 12,44 N</p>
-    <p><strong>Moment fléchissant maximal :</strong> Mmax = T × L = 12,44 × 0,15 = 1,87 N·m</p>
   </details>
 </section>
 
@@ -509,41 +434,21 @@
     <li><b>Flèche de 15 cm à 25°</b><span>Dimensions de la flèche appliquées ; portée de 13,6 cm, écart de 30 cm signalé.</span></li>
     <li><b>Fil de fer vers la base</b><span>Il remplace le contrepoids ; équilibrage recalculé (tension ≈ 1,1 fois la charge).</span></li>
     <li><b>Boucle 2 rédigée</b><span>Dimensionnement, réduction des charges, instructions de montage, nomenclature, liaisons et essais ajoutés au Word et au site.</span></li>
+      <li><b>Schéma officiel V1 reçu</b><span>Flèche de 25 cm à 25° sous l'horizontale, palan à poulies dans le mât, contrepoids sur le mât.</span></li>
+    <li><b>Schéma, 3D, Word et site mis à jour</b><span>Fil de fer remplacé par le contrepoids ; palan à n brins à la place du treuil à manivelle ; portée de 22,7 cm ; équilibrage et nomenclature recalculés.</span></li>
   </ol>
 </section>
 
 <section id="suite">
   <h2>Suite du projet</h2>
   <ol class="steps">
-    <li>Dimensionner le mât et le bras</li>
-    <li>Régler l'équilibrage : tension du fil de fer et lestage de la base</li>
-    <li>Déterminer le rapport de réduction réalisable avec les engrenages fournis</li>
-    <li>Concevoir le treuil, la manivelle et les poulies</li>
+    <li>Dimensionner le mât, la flèche et la base</li>
+    <li>Monter le palan à poulies et compter les brins</li>
+    <li>Régler le contrepoids</li>
     <li>Réaliser un pivot rigide pour le mât</li>
-    <li>Réaliser le schéma cinématique et les plans de la maquette à l'échelle 1:10</li>
+    <li>Mesurer l'effort de traction et le comparer au calcul</li>
+    <li>Finaliser les plans et la nomenclature de la maquette à l'échelle 1:10</li>
   </ol>
-</section>
-
-<section id="bilan" class="alt">
-  <h2>Bilan du projet</h2>
-  <div class="grid two">
-    <div>
-      <h3>Positif</h3>
-      <ul>
-        <li><strong>Production :</strong> Schéma cinématique réalisé, Site web réalisé, Schéma réalisé</li>
-        <li><strong>Apprentissage :</strong> Type de grue qui existe, Torseur de cohésion, Critères à associer pour le choix de la grue</li>
-        <li><strong>Organisation :</strong> Bonne entente</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Négatif</h3>
-      <ul>
-        <li><strong>Production :</strong> Dimensionnement qui manque</li>
-        <li><strong>Apprentissage :</strong> Manque de recherche de solution</li>
-        <li><strong>Organisation :</strong> Manque de communication, Aucune structure dans le travail, Défaut de présentation et défaut d'accord pour la présentation</li>
-      </ul>
-    </div>
-  </div>
 </section>
 </main>
 

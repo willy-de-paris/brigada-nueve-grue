@@ -16,13 +16,15 @@
   sun.position.set(4, 8, 5);
   scene.add(sun);
 
+  const carton = new THREE.MeshLambertMaterial({ color: 0xffe0b0 });
   const cardboard = new THREE.MeshLambertMaterial({ color: 0xc79a5b });
   const blue = new THREE.MeshLambertMaterial({ color: 0x12304f });
   const red = new THREE.MeshLambertMaterial({ color: 0xc0392b });
   const grey = new THREE.MeshLambertMaterial({ color: 0x55606c });
   const sand = new THREE.MeshLambertMaterial({ color: 0xd2b48c });
   const green = new THREE.MeshLambertMaterial({ color: 0x1a9e5c });
-  const rope = new THREE.MeshLambertMaterial({ color: 0xe8dcc0 });
+  const cable = new THREE.MeshLambertMaterial({ color: 0xe03c31 });
+  const glass = new THREE.MeshLambertMaterial({ color: 0xffe0b0, transparent: true, opacity: 0.4 });
 
   scene.add(new THREE.GridHelper(10, 20, 0x12304f, 0xb8c4d0));
 
@@ -49,93 +51,79 @@
   }
 
   // Dimensions (1 unité = 1 m réel ; maquette 1:10)
-  const MAST = 6.2;      // hauteur du mât (62 cm)
-  const ARM = 1.5;       // flèche côté charge : 15 cm sur la maquette
-  const ANG = 25 * Math.PI / 180; // inclinaison au-dessus de l'horizontale
-  const REACH = ARM * Math.cos(ANG); // portée horizontale ≈ 1,36 m (13,6 cm)
-  const RISE = ARM * Math.sin(ANG);  // hauteur gagnée ≈ 0,63 m
-  const BACK = 1.2;      // bras côté contrepoids (12 cm)
-  const armY = x => MAST + 0.1 + x * Math.tan(ANG); // hauteur de l'axe de la flèche
-  const LOW = 1.0, HIGH = 3.6; // hauteur des deux plaques de guidage
+  const MAST = 6.0;                    // haut du mât : 60 cm
+  const ARM = 3.0;                     // bras total : 30 cm (15 cm de chaque côté)
+  const ANG = 25 * Math.PI / 180;      // inclinaison SOUS l'horizontale
+  const REACH = (ARM / 2) * Math.cos(ANG);   // portée ≈ 1,36 m (13,6 cm)
+  const TIPY = MAST - (ARM / 2) * Math.sin(ANG); // hauteur du bout de flèche ≈ 5,37 m
+  const COUNTER_TIPY = MAST - (ARM / 2) * Math.sin(ANG); // hauteur du bout de contre-flèche (même hauteur)
+  const W = 0.54;                      // mât en caisson 5,4 cm
 
   // Partie fixe : base, montants, deux plaques avec appuis plans, pivot central
   block(scene, 3, 0.14, 3, cardboard, 0, 0.07, 0);
   block(scene, 3.1, 0.04, 3.1, blue, 0, 0.01, 0);
-  [[-0.7, -0.7], [0.7, -0.7], [-0.7, 0.7], [0.7, 0.7]].forEach(p =>
-    bar(scene, V(p[0], 0.14, p[1]), V(p[0], HIGH + 0.1, p[1]), 0.03, grey));
-  [LOW, HIGH].forEach(y => {
-    block(scene, 1.6, 0.06, 1.6, green, 0, y, 0);        // plaque
-    block(scene, 1.6, 0.06, 1.6, cardboard, 0, y - 0.1, 0); // appui plan
+  // Pieds de la base
+  [[-1.3, -1.3], [1.3, -1.3], [-1.3, 1.3], [1.3, 1.3]].forEach(p =>
+    block(scene, 0.2, 0.1, 0.2, grey, p[0], 0, p[1]));
+  [[-0.9, -0.9], [0.9, -0.9], [-0.9, 0.9], [0.9, 0.9]].forEach(p =>
+    bar(scene, V(p[0], 0.14, p[1]), V(p[0], 5.3, p[1]), 0.03, grey));
+  [[5.1, 4.8], [0.6, 0.3]].forEach(h => {
+    block(scene, 1.7, 0.06, 1.7, green, 0, h[0], 0);      // plaque
+    block(scene, 1.7, 0.06, 1.7, cardboard, 0, h[1], 0);  // appui plan
   });
-  const manchon = cyl(scene, 0.26, 0.26, 1.1, blue, 0, 2.3, 0); // pivot central
+  const manchon = cyl(scene, 0.3, 0.3, 0.8, blue, 0, 1.3, 0); // pivot central
   manchon.material = new THREE.MeshLambertMaterial({ color: 0x12304f, transparent: true, opacity: 0.55 });
 
-  // Partie tournante : mât, butées, bras, contrepoids, treuil, poulies
+  // Partie tournante : axe, mât, palan, flèche, contrepoids
   const swing = new THREE.Group();
   scene.add(swing);
 
-  cyl(swing, 0.12, 0.12, MAST, cardboard, 0, 0.14 + MAST / 2 - 0.07, 0);
-  [LOW - 0.2, HIGH - 0.2].forEach(y => cyl(swing, 0.2, 0.2, 0.1, red, 0, y, 0)); // butées
+  cyl(swing, 0.06, 0.06, 2.1, grey, 0, 1.0, 0);                         // axe du pivot
+  block(swing, W, 4.0, W, glass, 0, 4.0, 0);                             // mât (transparent)
+  [0.35, 0.55].forEach((x, i) => [1, 2, 3].forEach(k =>
+    cyl(swing, 0.1, 0.1, 0.1, carton, -0.2 + (k - 1) * 0.2, 4.0 + (i ? -0.3 : 0.3), 0).rotation.x = Math.PI / 2)); // 6 poulies du palan
+  [5.0, 0.45].forEach(y => cyl(swing, 0.2, 0.2, 0.1, red, 0, y, 0));    // butées
 
-  bar(swing, V(0, MAST + 0.1, 0), V(REACH, armY(REACH), 0), 0.11, cardboard);          // flèche inclinée
-  bar(swing, V(0, MAST + 0.1, 0), V(-BACK, MAST + 0.1 - BACK * Math.tan(ANG), 0), 0.11, cardboard); // bras du contrepoids incliné
-  cyl(swing, 0.07, 0.07, 0.3, red, -BACK, MAST + 0.1 - BACK * Math.tan(ANG), 0);  // attache du fil de fer à l'extrémité
+  const tip = V(REACH, TIPY, 0);
+  const counterTip = V(-REACH, COUNTER_TIPY, 0);
+  bar(swing, counterTip, tip, 0.1, carton);                                // bras continu de 30 cm (15 cm de chaque côté)
+  block(swing, 0.35, 0.9, 0.6, sand, -REACH - 0.2, COUNTER_TIPY - 0.5, 0); // contrepoids sur l'extrémité gauche
 
-  // Fil de fer du petit bras vers la base (ancré au milieu de l'arc de rotation)
-  const wire = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 1, 6), grey);
-  scene.add(wire);
-  const aMid = -0.5;
-  const anchor = V(-BACK * Math.cos(aMid), 0.14, BACK * Math.sin(aMid));
-  block(scene, 0.25, 0.1, 0.25, red, anchor.x, 0.19, anchor.z);
-  function setBar(m, a, b) {
-    const d = new THREE.Vector3().subVectors(b, a);
-    m.position.copy(a).add(b).multiplyScalar(0.5);
-    m.scale.y = d.length();
-    m.quaternion.setFromUnitVectors(V(0, 1, 0), d.normalize());
-  }
-
-  // Poulies
-  const P1 = cyl(swing, 0.16, 0.16, 0.07, red, 0.3, armY(0.3) + 0.25, 0);
-  const P2 = cyl(swing, 0.16, 0.16, 0.07, red, REACH, armY(REACH) + 0.25, 0);
+  const P1 = cyl(swing, 0.15, 0.15, 0.07, red, 0.35, MAST - 0.1 - 0.35 * Math.tan(ANG) + 0.2, 0);
+  const P2 = cyl(swing, 0.17, 0.17, 0.07, red, REACH, TIPY + 0.25, 0);
   P1.rotation.x = Math.PI / 2;
   P2.rotation.x = Math.PI / 2;
 
-  // Treuil sur le mât (côté charge)
-  block(swing, 0.9, 0.9, 0.1, grey, 0.5, 1.9, 0.0);
-  const drum = cyl(swing, 0.2, 0.2, 0.5, blue, 0.45, 1.9, 0.3);
-  drum.rotation.x = Math.PI / 2;
-  const crank = new THREE.Group();
-  crank.position.set(0.45, 1.9, 0.6);
-  block(crank, 0.5, 0.05, 0.05, red, 0.25, 0, 0);
-  const handle = cyl(crank, 0.04, 0.04, 0.2, red, 0.5, 0, 0.1);
-  handle.rotation.x = Math.PI / 2;
-  swing.add(crank);
+  // Câble : palan -> poulie de renvoi -> poulie de bout de flèche
+  bar(swing, V(-0.2, 4.4, 0.05), V(0.35, P1.position.y + 0.05, 0.05), 0.012, cable);
+  bar(swing, V(0.35, P1.position.y + 0.16, 0.05), V(REACH, TIPY + 0.41, 0.05), 0.012, cable);
+  // Bout du câble tiré à la main (sortie au bas du mât) : poignée qui descend
+  const pull = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 1, 6), cable);
+  swing.add(pull);
+  const handle = new THREE.Mesh(new THREE.TorusGeometry(0.1, 0.025, 8, 16), red);
+  swing.add(handle);
 
-  // Ficelle fixe : tambour -> haut du mât -> bout de bras
-  bar(swing, V(0.3, 2.1, 0.3), V(0.3, armY(0.3) + 0.25, 0.12), 0.012, rope);
-  bar(swing, V(0.3, armY(0.3) + 0.41, 0.12), V(REACH, armY(REACH) + 0.41, 0.12), 0.012, rope);
-
-  // Ficelle verticale et charge
-  const cord = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 1, 6), rope);
+  // Câble vertical et charge
+  const cord = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 1, 6), cable);
   swing.add(cord);
   const load = new THREE.Mesh(new THREE.SphereGeometry(0.28, 20, 16), red);
   swing.add(load);
 
   let T = 0, L = 0, theta = 0.7, phi = 1.15, dist = 15;
-  const target = V(0.8, 3, 0);
+  const target = V(0.6, 3, 0);
 
   function pose() {
-    swing.rotation.y = -T; // 1 rad de rotation = arc de 1,36 m (13,6 cm sur la maquette)
-    const top = armY(REACH) + 0.25;
-    const loadTop = 0.9 + L * 4; // 4 m de levage
-    load.position.set(REACH, loadTop - 0.28, 0.12);
-    cord.scale.y = top - loadTop;
-    cord.position.set(REACH, (top + loadTop) / 2, 0.12);
-    const a = swing.rotation.y;
-    const wireEnd = V(-BACK * Math.cos(a), MAST + 0.1 - BACK * Math.tan(ANG), BACK * Math.sin(a));
-    setBar(wire, wireEnd, anchor);
-    crank.rotation.z = -L * 12;
-    drum.rotation.y = -L * 12;
+    swing.rotation.y = -T; // 1 rad de rotation = arc de 2,27 m (22,7 cm sur la maquette)
+    const top = TIPY + 0.25;
+    const center = 0.4 + L * 4;   // 4 m de levage = 40 cm sur la maquette
+    load.position.set(REACH, center, 0.05);
+    cord.scale.y = top - (center + 0.28);
+    cord.position.set(REACH, (top + center + 0.28) / 2, 0.05);
+    // poignée : illustration de la traction à la main (la course est symbolique)
+    const hy = 1.7 - L * 0.9;
+    pull.position.set(0.6, (4.0 + hy) / 2 - 0.1, 0.05);
+    pull.scale.y = 4.0 - hy - 0.2;
+    handle.position.set(0.6, hy - 0.1, 0.05);
     oT.textContent = Math.round(T * 57.3) + '° (arc ' + (T * REACH * 10).toFixed(1) + ' cm)';
     oL.textContent = Math.round(L * 40) + ' cm';
   }
@@ -159,7 +147,6 @@
   }
   addEventListener('resize', resize);
 
-  // Rotation de la vue à la souris / au doigt
   let drag = false, lx = 0, ly = 0;
   box.addEventListener('pointerdown', e => { drag = true; lx = e.clientX; ly = e.clientY; box.setPointerCapture(e.pointerId); });
   box.addEventListener('pointerup', () => (drag = false));
@@ -190,7 +177,6 @@
     requestAnimationFrame(loop);
     if (!visible) return;
     if (playing) {
-      // cycle : lever, tourner le mât, descendre, revenir
       const c = ((now - t0) / 1000 % 12) / 12;
       const ease = v => v * v * (3 - 2 * v);
       const seg = (a, b) => ease(Math.min(1, Math.max(0, (c - a) / (b - a))));
