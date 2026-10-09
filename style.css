@@ -56,8 +56,8 @@ th{background:var(--blue);color:#fff;font-weight:600}
 .panel{background:#fff;padding:1.2rem 1.5rem;border-left:5px solid var(--card)}
 .panel[hidden]{display:none}
 
-figure{margin:0}
-figure img{width:100%;border:1px solid var(--line);background:#fff}
+figure{margin:0;text-align:center}
+figure img{width:100%;max-width:600px;border:1px solid var(--line);background:#fff;display:block;margin:0 auto}
 figcaption{font-size:.9rem;color:var(--muted);margin-top:.4rem}
 
 .chain{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0}
