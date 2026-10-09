@@ -54,9 +54,10 @@
   const MAST = 6.0;                    // haut du mât : 60 cm
   const ARM = 3.0;                     // bras total : 30 cm (15 cm de chaque côté)
   const ANG = 25 * Math.PI / 180;      // inclinaison SOUS l'horizontale
-  const REACH = (ARM / 2) * Math.cos(ANG);   // portée ≈ 1,36 m (13,6 cm)
-  const TIPY = MAST - (ARM / 2) * Math.sin(ANG); // hauteur du bout de flèche ≈ 5,37 m
-  const COUNTER_TIPY = MAST - (ARM / 2) * Math.sin(ANG); // hauteur du bout de contre-flèche (même hauteur)
+  const REACH = (ARM / 2) * Math.cos(ANG);   // portée horizontale ≈ 1,36 m (13,6 cm)
+  const DROP = (ARM / 2) * Math.sin(ANG);    // descente verticale ≈ 0,63 m (6,3 cm)
+  const TIPY = MAST + DROP;                  // hauteur du bout de flèche (côté droit, plus haut)
+  const COUNTER_TIPY = MAST - DROP;          // hauteur du bout de contre-flèche (côté gauche, plus bas)
   const W = 0.54;                      // mât en caisson 5,4 cm
 
   // Partie fixe : base, montants, deux plaques avec appuis plans, pivot central
